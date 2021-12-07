@@ -1,7 +1,117 @@
 .home-container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-1 {
     height: 90vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+}
+
+.icons, .icons-1, .icons-2, .icons-3 {
+    color: black;
+    cursor: pointer;
+    margin: 5px 0 0 0px;
+    padding: 5px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    font-size: 36px;
+    transition: 0.5s ease;
+}
+
+.icons-1 {
+    position: absolute;
+    right: 10%;
+    bottom: 20%;
+}
+
+.icons-2 {
+    position: absolute;
+    left: 20%;
+    bottom: 10%;
+}
+
+.icons-3 {
+    position: absolute;
+    right: 40%;
+    bottom: 40%;
+}
+
+.icon-click {
+    background-color: rgb(66, 66, 66);
+    color: white;
+    animation: arrowPop 1s cubic-bezier(0,.79,.25,.99);
+}
+
+.icon-click-1 {
+    background-color: rgb(155, 203, 243);
+    animation: arrowPop 1.2s cubic-bezier(0,.79,.25,.99);
+}
+
+.icon-click-2 {
+    background-color: rgb(255, 243, 134);
+    animation: arrowPop 1.4s cubic-bezier(0,.79,.25,.99);
+}
+
+.icon-click-3 {
+    background-color: rgb(228, 133, 133);
+    animation: arrowPop 1.6s cubic-bezier(0,.79,.25,.99);
+}
+
+@keyframes arrowPop {
+    100%, 0% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(20px)
+    }
+}
+
+.home-2 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.project-1 {
+    position: relative;
+    background-color: rgb(255, 226, 172);
+    border-radius: 15px;
+    width: 90%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background-image: url('../../images/overlay.png'), linear-gradient(45deg, rgb(250, 216, 143) 0%, rgb(235, 235, 235) 100%);
+}
+
+.project-1-title {
+    position: absolute;
+    color: rgb(76, 80, 82);
+    top: 0;
+    left: 15px;
+}
+
+.project-1-title h1 {
+    font-size: 40px;
+}
+
+.project-1-title p {
+    font-size: 25px;
+}
+
+.btc-img {
+    margin: 0 auto;
+    width: 100%;
 }
