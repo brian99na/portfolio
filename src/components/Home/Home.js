@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import './home.css'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import btc from '../../images/coinflip_img.png'
+import homepage from '../../images/0001.png'
 
 function Home() {
 
@@ -42,11 +43,18 @@ function Home() {
                     <h1>Projects</h1>
                 </div>
                 <div className='project-1'>
-                    <div className='project-1-title'>
+                    <div className='project-title'>
                         <h1>What If?</h1>
                         <p>Cryptocurrency Calculator</p>
                     </div>
                     <img className='btc-img' src={btc} alt='btc'/>
+                </div>
+                <div className='project-2'>
+                    <div className='project-title'>
+                        <h1>Home.</h1>
+                        <p>Browser Homepage</p>
+                    </div>
+                    <img className='homepage-img' src={homepage} alt='btc'/>
                 </div>
             </section>
         </div>
