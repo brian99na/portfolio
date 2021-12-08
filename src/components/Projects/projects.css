@@ -1,0 +1,10 @@
+.what-if-container {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s ease;
+}
+
+.page-leave {
+    opacity: 0;
+    transform: translateY(40px);
+}

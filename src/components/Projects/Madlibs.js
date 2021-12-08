@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function Madlibs() {
+function Madlibs(props) {
+    useEffect(() => {
+        props.setPageLeave(false)
+    }, [])
+
     return (
-        <div>
-            
+        <div className={`what-if-container ${props.pageLeave ? 'page-leave' : ''}`}>
+            <h1>hello</h1>
         </div>
     )
 }

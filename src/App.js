@@ -9,19 +9,23 @@ import Whatif from './components/Projects/Whatif';
 import HomePage from './components/Projects/HomePage';
 import Madlibs from './components/Projects/Madlibs';
 import { Routes, Route } from 'react-router';
+import { useState } from 'react';
 
 function App() {
+
+  const [pageLeave, setPageLeave] = useState(false)
+
   return (
     <div className="App">
-      <Header />
+      <Header pageLeave={pageLeave} setPageLeave={setPageLeave}/>
       <Routes>
-        <Route path="/" exact element={<Home />}/>
+        <Route path="/" exact element={<Home pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
         <Route path="/about" exact element={<About />}/>
         <Route path="/resume" exact element={<Resume />}/>
         <Route path="/contact" exact element={<Contact />}/>
-        <Route path="/projects/what-if" exact element={<Whatif />}/>
-        <Route path="/projects/home-age" exact element={<HomePage />}/>
-        <Route path="/projects/mad-libs" exact element={<Madlibs />}/>
+        <Route path="/projects/what-if" exact element={<Whatif pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
+        <Route path="/projects/home-age" exact element={<HomePage pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
+        <Route path="/projects/mad-libs" exact element={<Madlibs pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
       </Routes>
       <Footer />
     </div>

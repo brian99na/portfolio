@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import './header.css'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
-function Header() {
+function Header(props) {
     const [navReveal, setNavReveal] = useState(false)
 
     const handleClick = () => {
         setNavReveal(!navReveal)
     }
 
+    useEffect(() => {
+        props.setPageLeave(false)
+    }, [])
+
     return (
-        <nav className='nav-container'>
+        <nav className={`nav-container ${props.pageLeave ? 'page-leave' : ''}`}>
             <section className='nav-burger-container' onClick={handleClick}>
                 <div className={`burger1 ${navReveal ? 'burgerAnimation1' : ''}`}></div>
                 <div className={`burger2 ${navReveal ? 'burgerAnimation' : ''}`}></div>
