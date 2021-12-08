@@ -12,9 +12,35 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     position: relative;
+}
+
+.home-1-art {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: rgba(233, 233, 233, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    transition: 1s ease;
+    z-index: -1;
+}
+
+.art-click {
+    pointer-events: none;
+}
+
+.button-arr {
+    padding: 20px 0 0 0;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.button-arr-click {
 }
 
 .icons, .icons-1, .icons-2, .icons-3 {
@@ -25,46 +51,75 @@
     background-color: rgb(240, 240, 240);
     border-radius: 5px;
     font-size: 36px;
+}
+
+.icons {
+    transform: rotate(0deg);
     transition: 0.5s ease;
 }
 
 .icons-1 {
-    position: absolute;
-    right: 10%;
-    bottom: 20%;
+    opacity: 0;
+    z-index: -1;
+    transition: 0.75s ease;
 }
 
 .icons-2 {
-    position: absolute;
-    left: 20%;
-    bottom: 10%;
+    opacity: 0;
+    z-index: -1;
+    transition: 1s ease;
 }
 
 .icons-3 {
-    position: absolute;
-    right: 40%;
-    bottom: 40%;
+    opacity: 0;
+    z-index: -1;
+    transition: 1.25s ease;
 }
 
 .icon-click {
     background-color: rgb(66, 66, 66);
     color: white;
-    animation: arrowPop 1s cubic-bezier(0,.79,.25,.99);
+    transform: rotate(-90deg);
+    animation: mainArrowPop 1s cubic-bezier(0,.79,.25,.99);
 }
 
 .icon-click-1 {
-    background-color: rgb(155, 203, 243);
-    animation: arrowPop 1.2s cubic-bezier(0,.79,.25,.99);
+    opacity: 1;
+    background-image: linear-gradient(45deg, rgb(250, 216, 143) 0%, rgb(235, 235, 235) 100%);
+    animation: arrowPop 1.2s cubic-bezier(0,.79,.25,.99), pulse 2.6s infinite ease;
+    z-index: 1;
 }
 
 .icon-click-2 {
-    background-color: rgb(255, 243, 134);
-    animation: arrowPop 1.4s cubic-bezier(0,.79,.25,.99);
+    opacity: 1;
+    background-color: rgb(114, 181, 226);
+    animation: arrowPop 1.4s cubic-bezier(0,.79,.25,.99), pulse 3s infinite ease;
+    z-index: 1;
 }
 
 .icon-click-3 {
-    background-color: rgb(228, 133, 133);
-    animation: arrowPop 1.6s cubic-bezier(0,.79,.25,.99);
+    opacity: 1;
+    background-color: rgb(118, 230, 118);
+    animation: arrowPop 1.6s cubic-bezier(0,.79,.25,.99), pulse 3.4s infinite ease;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    100%, 0% {
+        opacity: 0.7
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes mainArrowPop {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(-90deg)
+    }
 }
 
 @keyframes arrowPop {
@@ -72,12 +127,12 @@
         transform: translateY(0)
     }
     50% {
-        transform: translateY(20px)
+        transform: translateY(-20px)
     }
 }
 
 .home-2 {
-    height: 200vh;
+    height: fit-content;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -86,7 +141,7 @@
     gap: 1em;
 }
 
-.project-1, .project-2 {
+.project-1, .project-2, .project-3 {
     position: relative;
     display: flex;
     justify-content: center;
@@ -103,6 +158,14 @@
 
 .project-2 {
     background-image: url('../../images/overlay.png'), linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(255, 255, 255) 100%);
+}
+
+.project-3 {
+    background-image: url('../../images/overlay.png'), linear-gradient(45deg, rgb(80, 139, 68) 0%, rgb(70, 70, 70) 100%);
+}
+
+.project-3 .project-title, .project-2 .project-title {
+    color: white;
 }
 
 .project-title {
@@ -124,11 +187,38 @@
     font-size: 26px;
 }
 
-.btc-img {
+.slide-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 5px;
+    background: rgb(240, 240, 240, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid white;
+    font-weight: 500;
+    color: white
+}
+
+.project-1 .slide-btn {
+    color: rgb(59, 59, 59);
+    border: 1px solid rgb(128, 128, 128)
+}
+
+.img-1 {
     width: 70%;
     bottom: 0;
 }
 
-.homepage-img {
+.img-2 {
+    width: 100%;
+}
+
+.img-3 {
+    width: 70%;
+    bottom: 0;
+}
+
+.home-3 {
+    height: 100vh;
     width: 100%;
 }
