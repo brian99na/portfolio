@@ -6,11 +6,17 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    transition: 0.5s ease;
+}
+
+.page-leave {
+    opacity: 0;
+    top: 20px;
 }
 
 .nav-burger-container {
-    position: relative;
+    top: 0;
+    right: 0;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,6 +27,7 @@
     border-radius: 25px;
     cursor: pointer;
     z-index: 2;
+    transition: 0.5s ease;
 }
 
 .burger1, .burger2, .burger3 {
@@ -95,6 +102,7 @@
     height: 50px;
     padding: 10px 20px 0 0;
     transition: 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .iconContainerVisible {
@@ -108,9 +116,4 @@
 
 h1 {
     font-size: 60px;
-}
-
-.page-leave {
-    opacity: 0;
-    transform: translateY(40px);
 }

@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'
-import Footer from './components/Footer/Footer'
 import Resume from './components/Resume/Resume'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
@@ -20,14 +19,13 @@ function App() {
       <Header pageLeave={pageLeave} setPageLeave={setPageLeave}/>
       <Routes>
         <Route path="/" exact element={<Home pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
-        <Route path="/about" exact element={<About />}/>
-        <Route path="/resume" exact element={<Resume />}/>
-        <Route path="/contact" exact element={<Contact />}/>
+        <Route path="/about" exact element={<About pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
+        <Route path="/resume" exact element={<Resume pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
+        <Route path="/contact" exact element={<Contact pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
         <Route path="/projects/what-if" exact element={<Whatif pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
         <Route path="/projects/home-age" exact element={<HomePage pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
         <Route path="/projects/mad-libs" exact element={<Madlibs pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
       </Routes>
-      <Footer />
     </div>
   );
 }

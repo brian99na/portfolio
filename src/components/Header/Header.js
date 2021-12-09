@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import './header.css'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
+
 function Header(props) {
     const [navReveal, setNavReveal] = useState(false)
 
@@ -11,12 +12,14 @@ function Header(props) {
     }
 
     useEffect(() => {
-        props.setPageLeave(false)
-    }, [])
+        
+    }, [props.pageLeave])
+
+    console.log(props.pageLeave)
 
     return (
-        <nav className={`nav-container ${props.pageLeave ? 'page-leave' : ''}`}>
-            <section className='nav-burger-container' onClick={handleClick}>
+        <nav className={`nav-container `}>
+            <section className={`nav-burger-container ${props.pageLeave ? 'page-leave' : ''}`} onClick={handleClick}>
                 <div className={`burger1 ${navReveal ? 'burgerAnimation1' : ''}`}></div>
                 <div className={`burger2 ${navReveal ? 'burgerAnimation' : ''}`}></div>
                 <div className={`burger3 ${navReveal ? 'burgerAnimation3' : ''}`}></div>

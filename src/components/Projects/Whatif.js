@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import './projects.css'
+import './what-if.css'
+import btcAnim from '../../images/coinflip_img.png'
 
 function Whatif(props) {
 
@@ -9,7 +10,21 @@ function Whatif(props) {
 
     return (
         <div className={`what-if-container ${props.pageLeave ? 'page-leave' : ''}`}>
-            <h1>hello</h1>
+            <section className='section-1'>
+                <div className='text-container'>
+                    <h1>What If</h1>
+                    <p>Cryptocurrency calculator</p>
+                    <p>React, CSS, JavaScript, HTML</p>
+                    <div className='button-div'>
+                        <button>Live Site</button>
+                        <button>Github Repo</button>
+                    </div>
+                </div>
+                <div className='btc-anim-container'>
+                    <img className='btc-anim' src={btcAnim} alt='btc'/>
+                </div>
+            </section>
+
         </div>
     )
 }

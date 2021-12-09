@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-function About() {
+function About(props) {
+
+    useEffect(() => {
+        props.setPageLeave(false)
+    }, [])
+
     return (
         <div>
-            
+            <h1>hello</h1>
         </div>
     )
 }

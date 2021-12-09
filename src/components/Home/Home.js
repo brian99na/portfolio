@@ -1,18 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './home.css'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import ProjectSlide from './ProjectSlide'
 import btc from '../../images/coinflip_img.png'
 import homepage from '../../images/0001.png'
+import Skills from './Skills'
+import { IoLogoJavascript, IoLogoHtml5, IoLogoCss3, IoLogoPython } from 'react-icons/io'
+import { SiExpress, SiMongodb, SiJquery, SiDjango, SiReact } from 'react-icons/si'
 
 function Home(props) {
     const [arrowClick, setArrowClick] = useState(false)
     const [mainClick, setMainClick] = useState(false)
     const [windowVal, setWindowVal] = useState(0)
+    const navigate = useNavigate()
 
-    const cryptoRef = useRef()
-    const homepageRef = useRef()
-    const madlibsRef = useRef()
+    const projectsRef = useRef()
+    const skillsRef = useRef()
+    const contactRef = useRef()
+
+    const skills = [
+        {img: 'HTML5', name: <IoLogoHtml5/>}, {img: 'CSS3', name: <IoLogoCss3/>}, {img: 'JavaScript', name: <IoLogoJavascript/>}, 
+        {img: 'jQuery', name: <SiJquery/>}, {img: 'React', name: <SiReact/>}, {img: 'Express', name: <SiExpress/>}, 
+        {img: 'MongoDB', name: <SiMongodb/>}, {img: 'Python', name: <IoLogoPython/>}, {img: 'Django', name: <SiDjango/>}
+    ]
 
     const handleArrowClick = () => {
         setArrowClick(!arrowClick)
@@ -26,23 +37,28 @@ function Home(props) {
         setTimeout(() => {
             arrowClick && refVal.current.scrollIntoView({
                 behavior: 'smooth',
-                block: 'center',
-                inline: 'center'
             })
           }, 500);
-
     }
 
-    // window.addEventListener('scroll', () => {
-    //     let scrollVal = this.scrollY
-    //     setWindowVal(scrollVal)
-    // })
-
-    // console.log(windowVal)
+    const handleDelayClick = (e) => {
+        e.preventDefault()
+        props.setPageLeave(!props.pageLeave)
+        console.log(e.target)
+        setTimeout(() => {
+            navigate(`/${e.target.name}`)
+        }, 1000)
+    }
 
     useEffect(() => {
         props.setPageLeave(false)
     }, [])
+
+    const skillsJsx = skills.map((skill) => {
+        return(
+            <Skills img={skill.img} name={skill.name}/>
+        )
+    })
 
     return (
         <div className={`home-container ${props.pageLeave ? 'page-leave': ''}`}>
@@ -52,29 +68,47 @@ function Home(props) {
                     <p>I'm a Fullstack Web Developer with an interest in design. Check out some of my work below.</p>
                     <div className={`button-arr ${'button-arr-click'}`}>
                         <AiOutlineArrowDown className={`icons ${arrowClick ? 'icon-click' : ''}`} onClick={handleArrowClick}/>
-                        <AiOutlineArrowDown className={`icons-1 ${arrowClick ? 'icon-click-1' : ''}`} onClick={() => handleColorClick(cryptoRef)}/>
-                        <AiOutlineArrowDown className={`icons-2 ${arrowClick ? 'icon-click-2' : ''}`} onClick={() => handleColorClick(homepageRef)}/>
-                        <AiOutlineArrowDown className={`icons-3 ${arrowClick ? 'icon-click-3' : ''}`} onClick={() => handleColorClick(madlibsRef)}/>
+                        <AiOutlineArrowDown className={`icons-1 ${arrowClick ? 'icon-click-1' : ''}`} onClick={() => handleColorClick(projectsRef)}/>
+                        <AiOutlineArrowDown className={`icons-2 ${arrowClick ? 'icon-click-2' : ''}`} onClick={() => handleColorClick(skillsRef)}/>
+                        <AiOutlineArrowDown className={`icons-3 ${arrowClick ? 'icon-click-3' : ''}`} onClick={() => handleColorClick(contactRef)}/>
+                        <Link className={`button-link ${arrowClick ? 'invisible' : ''}`} to='/about'>
+                            <button name='about' className='real-button' onClick={handleDelayClick}>More about me</button>
+                        </Link>
                     </div>
                 </div>
                 <div className={`home-1-art ${arrowClick ? 'art-click' : ''}`}>
 
                 </div>
             </section>
-            <section className='home-2'>
-                <h1>Projects</h1>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} reffing={cryptoRef} link='what-if' index={'1'} img={btc} title='What If?' desc='Cryptocurrency Calculator'/>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} reffing={homepageRef} link='home-page' index={'2'} img={homepage} title='Home.' desc='Browser Homepage'/>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} reffing={madlibsRef} link='mad-libs' index={'3'} img={btc} title='Madlibs' desc='Word game'/>
+            <section className='home-2' ref={projectsRef}>
+                <h1 className='home-2-title'>Projects</h1>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='what-if' index={'1'} img={btc} title='What If?' desc='Cryptocurrency Calculator'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='home-page' index={'2'} img={homepage} title='Home.' desc='Browser Homepage'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={btc} title='Madlibs' desc='Word game'/>
             </section>
-            <section className='home-3'>
-                <h1>Skills</h1>
-                <div>
-
+            <section className='home-3' ref={skillsRef}>
+                <h1 className='home-3-title'>Skills</h1>
+                <div className='skills-container'>
+                    {skillsJsx}
                 </div>
-                <div>
-
-                </div>
+            </section>
+            <section className='home-4' ref={contactRef}>
+                <h1>Get in touch</h1>
+                <form className='input-form'>
+                    <div className='input-divs'>
+                        <p>Name *</p>
+                        <input placeholder='Your Name'></input>
+                    </div>
+                    <div className='input-divs'>
+                        <p>Email *</p>
+                        <input placeholder='Your Email'></input>
+                    </div>
+                    <div className='input-divs message'>
+                        <p>Message *</p>
+                        <textarea placeholder='Your Message'></textarea>
+                    </div>
+                    <button>Send</button>
+                </form>
             </section>
         </div>
     )

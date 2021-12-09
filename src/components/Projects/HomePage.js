@@ -7,7 +7,7 @@ function HomePage(props) {
 
     return (
         <div className={`what-if-container ${props.pageLeave ? 'page-leave' : ''}`}>
-            <h1>hello</h1>
+            <h1></h1>
         </div>
     )
 }
