@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import btcAnim from '../../images/coinflip_img.png'
 import './projects.css'
 
 function ProjectTemplate(props) {
@@ -14,19 +13,20 @@ function ProjectTemplate(props) {
     useEffect(() => {
         setTimeout(() => {
             props.setPageLeave(false)
+            window.scrollTo(0,0)
         }, 300)
     }, [])
 
     return (
         <div className={`project-container ${props.pageLeave ? 'page-leave' : ''}`}>
-            <section className='section-1'>
+            <section className={`section-1 ${props.color}`}>
                 <div className='section-1-text'>
                     <h1>{props.title1}</h1>
                     <p>{props.title2}</p>
                     <p>{props.title3}</p>
                 </div>
                 <div className='btc-anim-container'>
-                    <img className='btc-anim' src={btcAnim} alt='btc'/>
+                    <img className='btc-anim' src={props.art} alt='art'/>
                 </div>
                 <div className='button-div'>
                         <button name={props.link1} onClick={handleDelayClick}>Live Site</button>
@@ -38,9 +38,9 @@ function ProjectTemplate(props) {
                     <h1>{props.secTitle1}</h1>
                     <p>{props.secPara}</p>
                 </div>
-                <div className='shape-1'></div>
-                <div className='shape-2'></div>
-                <div className='shape-3'></div>
+                <div className={`shape-1 ${props.color}`}></div>
+                <div className={`shape-2 ${props.color}`}></div>
+                <div className={`shape-3 ${props.color}`}></div>
             </section>
             <section className='section-3'>
                 <h1>Planning</h1>

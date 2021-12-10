@@ -23,6 +23,7 @@ function Header(props) {
 
     return (
         <nav className={`nav-container `}>
+            <div className={navReveal ? 'overlay' : ''}></div>
             <section className={`nav-burger-container ${props.pageLeave ? 'page-leave' : ''}`} onClick={handleClick}>
                 <div className={`burger1 ${navReveal ? 'burgerAnimation1' : ''}`}></div>
                 <div className={`burger2 ${navReveal ? 'burgerAnimation' : ''}`}></div>
@@ -32,7 +33,7 @@ function Header(props) {
                 <Link to='/' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
                     <h1>Projects</h1>
                 </Link>
-                <Link to='/about-me' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
+                <Link to='/about' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
                     <h1>About Me</h1>
                 </Link>
                 <Link to='/resume' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>

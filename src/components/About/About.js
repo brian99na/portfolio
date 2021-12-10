@@ -7,7 +7,7 @@ function About(props) {
     }, [])
 
     return (
-        <div>
+        <div className={`about-container ${props.pageLeave ? 'page-leave' : ''}`}>
             <h1>hello</h1>
         </div>
     )
