@@ -11,11 +11,15 @@ function Header(props) {
         setNavReveal(!navReveal)
     }
 
+    const handleLinkClick = () => {
+        setNavReveal(!navReveal)
+        props.setPageLeave(true)
+        setTimeout(() => {props.setPageLeave(false)}, 600)
+    }
+
     useEffect(() => {
         
-    }, [props.pageLeave])
-
-    console.log(props.pageLeave)
+    }, [])
 
     return (
         <nav className={`nav-container `}>
@@ -25,21 +29,21 @@ function Header(props) {
                 <div className={`burger3 ${navReveal ? 'burgerAnimation3' : ''}`}></div>
             </section>
             <section className={`nav-link-container ${navReveal ? 'navVisible' : ''}`}>
-                <Link to='/' onClick={handleClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
+                <Link to='/' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
                     <h1>Projects</h1>
                 </Link>
-                <Link to='/about-me' onClick={handleClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
+                <Link to='/about-me' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
                     <h1>About Me</h1>
                 </Link>
-                <Link to='/resume' onClick={handleClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
+                <Link to='/resume' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
                     <h1>Resume</h1>
                 </Link>
-                <Link to='/contact-me' onClick={handleClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
+                <Link to='/contact-me' onClick={handleLinkClick} className={`nav-links ${navReveal ? 'navLinkVisible' : ''}`}>
                     <h1>Contact Me</h1>
                 </Link>
                 <div className={`icon-container ${navReveal ? 'iconContainerVisible' : ''}`}>
-                    <a href='https://www.github.com/brian99na' target='_blank'rel='noreferrer' ><AiFillGithub className='icons'/></a>
-                    <a href='https://www.linkedin.com/in/bna1' target='_blank'rel='noreferrer'><AiFillLinkedin className='icons'/></a>
+                    <a onClick={handleLinkClick} href='https://www.github.com/brian99na' target='_blank'rel='noreferrer' ><AiFillGithub className='icons'/></a>
+                    <a onClick={handleLinkClick} href='https://www.linkedin.com/in/bna1' target='_blank'rel='noreferrer'><AiFillLinkedin className='icons'/></a>
                 </div>
             </section>
         </nav>

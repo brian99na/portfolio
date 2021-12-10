@@ -42,16 +42,17 @@ function Home(props) {
     }
 
     const handleDelayClick = (e) => {
-        e.preventDefault()
-        props.setPageLeave(!props.pageLeave)
-        console.log(e.target)
+        props.setPageLeave(true)
         setTimeout(() => {
             navigate(`/${e.target.name}`)
-        }, 1000)
+        }, 500)
     }
 
     useEffect(() => {
-        props.setPageLeave(false)
+        setTimeout(() => {
+            props.setPageLeave(false)
+            window.scrollTo(0,0)
+        }, 300)
     }, [])
 
     const skillsJsx = skills.map((skill) => {
