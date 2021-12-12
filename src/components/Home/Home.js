@@ -48,12 +48,36 @@ function Home(props) {
         }, 500)
     }
 
+    const scrollToProjects = () => {
+        projectsRef.current.scrollIntoView({
+            behavior: 'smooth'
+        })
+    }
+
+    const scrollToContact = () => {
+        contactRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'center'
+        })
+    }
+
     useEffect(() => {
+        window.scrollTo(0,0)
         setTimeout(() => {
             props.setPageLeave(false)
-            window.scrollTo(0,0)
+            props.setProjectHeader(false)
+            props.setContactHeader(false)
         }, 300)
     }, [])
+
+    useEffect(() => {
+        props.contactHeader && scrollToContact()
+    }, [props.contactHeader])
+
+    useEffect(() => {
+        props.projectHeader && scrollToProjects()
+    }, [props.projectHeader])
 
     const skillsJsx = skills.map((skill) => {
         return(

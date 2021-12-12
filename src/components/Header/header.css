@@ -1,8 +1,3 @@
-.page-leave {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-
 .nav-container {
     position: fixed;
     display: flex;
@@ -11,6 +6,11 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+}
+
+.page-leave {
+    opacity: 0;
+    transform: translateX(-25px);
 }
 
 .overlay {
@@ -75,13 +75,12 @@
     position: fixed;
     height: 100vh;
     width: 100vw;
-    margin: 0 auto;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 2;
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(48, 48, 48);
     opacity: 0;
     transition: 0.5s ease;
     gap: 1em;
@@ -97,12 +96,7 @@
     transition: 0.5s ease-in-out;
     color: white;
     font-size: 36px;
-    padding: 0 20px 0 0;
-    height: 50px;
-}
-
-.navLinkVisible {
-    transform: translateY(-25px)
+    height: fit-content;
 }
 
 .icon-container {
@@ -117,8 +111,9 @@
     overflow: hidden;
 }
 
-.iconContainerVisible {
-    transform: translateY(-25px)
+.itemVisible {
+    transform: translateX(-25px);
+    opacity: 1;
 }
 
 .icons {
@@ -127,5 +122,64 @@
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 50px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    gap: 10%;
+}
+
+.projects-drop-arrow {
+    color: white;
+    font-size: 30px;
+    transition: 2s cubic-bezier(.76,.01,.57,.99);
+    opacity: 0;
+    padding: 10px 0 0 0;
+    transform: translateY(-45px);
+    transition: 1s ease;
+}
+
+.drop-active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.projects-sub-div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none;
+    width: fit-content;
+    gap: 5px;
+    height: 0;
+    opacity: 0;
+    transition: height 1s ease;
+}
+
+.projects-div-visible {
+    position: relative;
+    height: fit-content;
+    opacity: 1;
+    transition: 1s ease;
+    pointer-events: all;
+}
+
+.projects-sub-div a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: fit-content
+}
+
+.projects-sub-div a h1 {
+    font-size: 36px;
+    padding: 0;
+    margin: 0;
 }

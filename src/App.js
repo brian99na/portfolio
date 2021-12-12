@@ -13,6 +13,8 @@ import btcAnim from './images/coinflip_img.png'
 function App() {
 
   const [pageLeave, setPageLeave] = useState(false)
+  const [contactHeader, setContactHeader] = useState(false)
+  const [projectHeader, setProjectHeader] = useState(false)
 
 
   const templateArr = [
@@ -74,9 +76,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header pageLeave={pageLeave} setPageLeave={setPageLeave}/>
+      <Header pageLeave={pageLeave} setPageLeave={setPageLeave} contactHeader={contactHeader} setContactHeader={setContactHeader} projectHeader={projectHeader} setProjectHeader={setProjectHeader}/>
       <Routes>
-        <Route path="/" exact element={<Home pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
+        <Route path="/" exact element={<Home pageLeave={pageLeave} setPageLeave={setPageLeave} contactHeader={contactHeader} setContactHeader={setContactHeader} projectHeader={projectHeader} setProjectHeader={setProjectHeader}/>}/>
         <Route path="/about" exact element={<About pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
         <Route path="/resume" exact element={<Resume pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>
         <Route path="/contact" exact element={<Contact pageLeave={pageLeave} setPageLeave={setPageLeave}/>}/>

@@ -1,0 +1,73 @@
+.resume-container {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.5s ease;
+}
+
+.page-leave {
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.resume-container .section-1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+    position: relative;
+    background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgb(88, 94, 122) 0%, rgb(235, 235, 235) 100%);
+}
+
+.resume-container .section-1-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    text-align: left;
+}
+
+.resume-container .section-1-text h1, p {
+    width: 100%;
+}
+
+.resume-icon1 {
+    font-size: 200px;
+    bottom: 15%;
+    color: white
+}
+
+.resume-icon2 {
+    font-size: 30px;
+}
+
+.resume-container .section-1 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border-radius: 5px;
+    background-color: rgb(197, 197, 197, 0);
+    color: white;
+    border: 1px solid white;
+    backdrop-filter: blur(5px);
+    font-weight: 800;
+    padding: 5px 0;
+}
+
+.resume-container .section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(202, 204, 212);
+    background-image: url('../../images/overlay.png')
+}
+
+.resume-container .reg-resume {
+    max-width: 90%;
+    max-height: 90%;
+}
