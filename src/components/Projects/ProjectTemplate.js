@@ -14,7 +14,7 @@ function ProjectTemplate(props) {
         setTimeout(() => {
             props.setPageLeave(false)
             window.scrollTo(0,0)
-        }, 300)
+        }, 600)
     }, [])
 
     return (
@@ -34,13 +34,16 @@ function ProjectTemplate(props) {
                 </div>
             </section>
             <section className='section-2'>
-                <div className='section-2-text'>
-                    <h1>{props.secTitle1}</h1>
-                    <p>{props.secPara}</p>
+                <div className='section-2-inner'>
+                    <div className='section-2-text'>
+                        <h1>{props.secTitle1}</h1>
+                        <p>{props.secPara}</p>
+                    </div>
+                    <div className={`shape-1 ${props.color}`}></div>
+                    <div className={`shape-2 ${props.color}`}></div>
+                    <div className={`shape-3 ${props.color}`}></div>
                 </div>
-                <div className={`shape-1 ${props.color}`}></div>
-                <div className={`shape-2 ${props.color}`}></div>
-                <div className={`shape-3 ${props.color}`}></div>
+
             </section>
             <section className='section-3'>
                 <h1>Planning</h1>

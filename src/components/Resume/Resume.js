@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './resume.css'
 import { DiGoogleDrive } from 'react-icons/di'
 import { GrDocumentPdf } from 'react-icons/gr'
-import { GiExpand } from 'react-icons/gi'
 import resume from '../../images/Copy of Brian Na Resume.jpg'
 
 function Resume(props) {
-    const [overlay, setOverlay] = useState(false)
-
-    const handleOverlay = () => {
-        setOverlay(!overlay)
-    }
 
     const handleDelayClick = (e) => {
         props.setPageLeave(true)
@@ -20,10 +14,9 @@ function Resume(props) {
     }
 
     useEffect(() => {
+        props.setPageLeave(false)
         window.scrollTo(0,0)
     }, [])
-
-    console.log(overlay)
 
     return (
         <div className={`resume-container ${props.pageLeave ? 'page-leave' : ''}`}>

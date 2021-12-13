@@ -1,3 +1,8 @@
+.project-container h1 {
+    font-family: 'DM Serif Text', serif;
+    font-weight: 400;
+}
+
 .color1 {
     background-image: url('../../images/overlay.png'), linear-gradient(180deg, rgb(250, 216, 143) 0%, rgb(235, 235, 235) 100%);
 }
@@ -18,7 +23,7 @@
     width: 100vw;
     opacity: 1;
     transform: translateY(0);
-    transition: 0.5s ease;
+    transition: 1s ease;
 }
 
 .page-leave {
@@ -80,17 +85,22 @@
 }
 
 .section-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
     height: 100vh;
     width: 100%;
     gap: 10px;
     overflow: hidden;
     background-color: rgb(240, 240, 240);
     z-index: -2;
+}
+
+.section-2-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .section-2-text {
@@ -137,7 +147,19 @@
 
 .shape-3 {
     overflow: hidden;
-    transform: rotate(45deg);
     bottom: 40%;
     right: 0;
+    animation: shapeAnim3 10s infinite ease;
+}
+
+@keyframes shapeAnim3 {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(225deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
 }

@@ -1,10 +1,50 @@
 .about-container {
-    opacity: 1;
-    transform: translateY(0);
-    transition: 0.5s ease;
+    width: 100vw;
+    position: relative;
+    transform: translateY(0px);
+    transition: 1s ease;
 }
 
 .page-leave {
     opacity: 0;
-    transform: translateY(-40px);
+    transform: translateY(-45px);
 }
+
+.about-home-text{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(247, 247, 247);
+    transition: 1s ease;
+}
+
+.about-home-text h1 {
+    font-size: 30px;
+}
+
+.text-leave {
+    opacity: 0;
+    transform: translateY(-45px);
+}
+
+.about-main {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100vh;
+    transform: translateY(-45px);
+    transition: 1s ease;
+}
+
+.main-load {
+    transform: translateY(0px);
+    opacity: 1
+}
+

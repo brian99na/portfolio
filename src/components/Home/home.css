@@ -203,10 +203,6 @@
     background-image: url('../../images/overlay.png'), linear-gradient(45deg, rgb(255, 161, 213) 0%, rgb(235, 235, 235) 100%);
 }
 
-.project-3 .project-title, .project-2 .project-title {
-    color: white;
-}
-
 .project-title {
     display: flex;
     flex-direction: column;
@@ -214,12 +210,12 @@
     align-items: flex-start;
     position: absolute;
     color: rgb(76, 80, 82);
-    top: 0;
+    top: 15px;
     left: 15px;
 }
 
 .project-title h1 {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .project-title p {

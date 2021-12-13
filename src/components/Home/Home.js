@@ -38,7 +38,7 @@ function Home(props) {
             arrowClick && refVal.current.scrollIntoView({
                 behavior: 'smooth',
             })
-          }, 500);
+        }, 500);
     }
 
     const handleDelayClick = (e) => {
@@ -56,19 +56,19 @@ function Home(props) {
 
     const scrollToContact = () => {
         contactRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'center'
+            behavior: 'smooth'
         })
     }
 
     useEffect(() => {
-        window.scrollTo(0,0)
+        if (!props.contactHeader && !props.projectHeader) {
+            window.scrollTo(0,0)
+        }
         setTimeout(() => {
             props.setPageLeave(false)
             props.setProjectHeader(false)
             props.setContactHeader(false)
-        }, 300)
+        }, 100);
     }, [])
 
     useEffect(() => {
@@ -109,7 +109,7 @@ function Home(props) {
                 <h1 className='home-2-title'>Projects</h1>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='what-if' index={'1'} img={btc} title='What If?' desc='Cryptocurrency Calculator'/>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='home-page' index={'2'} img={homepage} title='Home.' desc='Browser Homepage'/>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={btc} title='Madlibs' desc='Word game'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={btc} title='Madlibs!' desc='Word game'/>
             </section>
             <section className='home-3' ref={skillsRef}>
                 <h1 className='home-3-title'>Skills</h1>

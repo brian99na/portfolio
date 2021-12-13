@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate, useLocation} from 'react-router-dom'
 import './header.css'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { MdKeyboardArrowDown } from 'react-icons/md'
+import homeIcon from '../../images/bn.svg'
 
 function Header(props) {
     const [navReveal, setNavReveal] = useState(false)
     const [projectDropDown, setProjectDropDown] = useState(false)
+    const navigate = useNavigate()
+    const location = useLocation()
 
     const handleClick = () => {
         setNavReveal(!navReveal)
@@ -16,34 +19,62 @@ function Header(props) {
         setProjectDropDown(!projectDropDown)
     }
 
+    const handleHomeClick = (e) => {
+        props.setPageLeave(true)
+        setTimeout(() => {
+            if (location.pathname === '/') {
+                props.setPageLeave(false)
+            }
+            navigate('/')
+            window.scrollTo(0, 0)
+        }, 500)
+    }
+
     const handleLinkClick = () => {
         setNavReveal(!navReveal)
         props.setPageLeave(true)
-        setTimeout(() => {props.setPageLeave(false)}, 600)
+        setTimeout(() => {
+            props.setPageLeave(false)
+            setProjectDropDown(false)
+        }, 600)
     }
 
     const handleContactClick = () => {
-        setNavReveal(!navReveal)
         props.setPageLeave(true)
-        props.setContactHeader(!props.contactHeader)
-        setTimeout(() => {props.setPageLeave(false)}, 600)
+        setTimeout(() => {
+            setNavReveal(!navReveal)
+            props.setContactHeader(!props.contactHeader)
+            setProjectDropDown(false)
+            props.setPageLeave(false)
+        }, 300)
     }
 
     const handleProjectsClick = () => {
-        setNavReveal(!navReveal)
-        props.setProjectHeader(!props.projectHeader)
         props.setPageLeave(true)
         setTimeout(() => {
+            setNavReveal(!navReveal)
+            props.setProjectHeader(!props.projectHeader)
+            setProjectDropDown(false)
             props.setPageLeave(false)
-            setProjectDropDown(!projectDropDown)
-        }, 600)        
+        }, 300)        
+    }
+
+    const handlePLinkClick = () => {
+        props.setPageLeave(true)
+        setTimeout(() => {
+            setNavReveal(!navReveal)
+            props.setPageLeave(false)
+            setProjectDropDown(false)
+        }, 300)        
     }
 
     const navLinkClass = `nav-links ${navReveal ? 'itemVisible' : ''}`
 
     return (
-        <nav className={`nav-container `}>
-            <div className={navReveal ? 'overlay' : ''}></div>
+        <nav className='nav-container'>
+            <section className='home-icon'>
+                <img src={homeIcon} alt='navHome' name='/' onClick={handleHomeClick}/>
+            </section>
             <section className={`nav-burger-container ${props.pageLeave ? 'page-leave' : ''}`} onClick={handleClick}>
                 <div className={`burger1 ${navReveal ? 'burgerAnimation1' : ''}`}></div>
                 <div className={`burger2 ${navReveal ? 'burgerAnimation' : ''}`}></div>
@@ -57,13 +88,13 @@ function Header(props) {
                     </Link>
                 </div>
                 <div className={`projects-sub-div ${projectDropDown ? 'projects-div-visible' : ''}`}>
-                    <Link to='/projects/what-if' onClick={handleProjectsClick} className={navLinkClass}>
+                    <Link to='/projects/what-if' onClick={handlePLinkClick} className={navLinkClass}>
                         <h1>What If?</h1>
                     </Link>
-                    <Link to='/projects/home-page' onClick={handleProjectsClick} className={navLinkClass}>
+                    <Link to='/projects/home-page' onClick={handlePLinkClick} className={navLinkClass}>
                         <h1>Home.</h1>
                     </Link>
-                    <Link to='/projects/mad-libs' onClick={handleProjectsClick} className={navLinkClass}>
+                    <Link to='/projects/mad-libs' onClick={handlePLinkClick} className={navLinkClass}>
                         <h1>Madlibs!</h1>
                     </Link>
                 </div>
