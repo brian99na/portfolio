@@ -42,7 +42,9 @@
 }
 
 .about-main p {
-    font-size: 30px;
+    width: 100%;
+    font-size: 22px;
+    text-align: left;
 }
 
 .main-load {
@@ -53,9 +55,28 @@
 .about-1, .about-2, .about-3, .about-4 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
     width: 90%;
 }
 
+.about-1 {
+    padding: 10vh 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.boat-img {
+    width: 100%;
+}
+
+.about-1 a {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.blender-video {
+    width: 100%;
+}

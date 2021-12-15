@@ -8,6 +8,10 @@
   font-family: 'Darker Grotesque', sans-serif;
 }
 
+p {
+  letter-spacing: 0.75px;
+}
+
 h1 {
   font-family: 'DM Serif Text', serif;
   font-weight: 400;

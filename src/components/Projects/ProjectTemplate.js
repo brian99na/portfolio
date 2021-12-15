@@ -1,7 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation} from 'react-router-dom'
 import './projects.css'
 
 function ProjectTemplate(props) {
+    const [currentPath, setCurrentPath] = useState('')
+    const location = useLocation()
+
+    const footerLinks = [
+        {name: 'What If?', pathname: 'what-if'},
+        {name: 'Home.', pathname: 'home-page'},
+        {name: 'Madlibs!', pathname: 'mad-libs'}
+    ]
+
 
     const handleDelayClick = (e) => {
         props.setPageLeave(true)
@@ -11,11 +21,25 @@ function ProjectTemplate(props) {
     }
 
     useEffect(() => {
+        setCurrentPath(location.pathname)
         setTimeout(() => {
             props.setPageLeave(false)
             window.scrollTo(0,0)
         }, 600)
     }, [])
+
+    const linksJsx = footerLinks.filter((links) => {
+        return(
+            currentPath !== `/projects/${links.pathname}`
+        )
+    }).map((link) => {
+        return(
+            <Link className='link-tag' to={`/projects/${link.pathname}`}>
+                <h1 className='link-name'>{link.name}</h1>
+            </Link>
+        )
+    })
+
 
     return (
         <div className={`project-container ${props.pageLeave ? 'page-leave' : ''}`}>
@@ -46,8 +70,29 @@ function ProjectTemplate(props) {
 
             </section>
             <section className='section-3'>
-                <h1>Planning</h1>
-                <img src='https://www.figma.com/file/nVvxhFwbIqFPyypM3msA2z/Untitled?node-id=0%3A1' alt='img'/>
+                <div className='col-1'>
+                    <div className='position'>
+                        <h3>POSITION</h3>
+                        <p>{props.position}</p>
+                    </div>
+                    <div className='year'>
+                        <h3>YEAR</h3>
+                        <p>{props.year}</p>
+                    </div>
+                </div>
+                <div className='col-2'>
+                    <div className='work'>
+                        <h3>WORK</h3>
+                        <p>{props.position}</p>
+                    </div>
+                    <div>
+                        <h3>YEAR</h3>
+                        <p>{props.year}</p>
+                    </div>
+                </div>
+            </section>
+            <section className='section-4'>
+                {linksJsx}
             </section>
         </div>
     )

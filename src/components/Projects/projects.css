@@ -1,6 +1,7 @@
 .project-container h1 {
     font-family: 'DM Serif Text', serif;
     font-weight: 400;
+    font-size: 40px;
 }
 
 .color1 {
@@ -162,4 +163,12 @@
     100% {
         transform: rotate(405deg);
     }
+}
+
+.section-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
 }
