@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation} from 'react-router-dom'
+import { useLocation, useNavigate} from 'react-router-dom'
 import './projects.css'
 
 function ProjectTemplate(props) {
     const [currentPath, setCurrentPath] = useState('')
     const location = useLocation()
+    const navigate = useNavigate()
 
     const footerLinks = [
         {name: 'What If?', pathname: 'what-if'},
@@ -13,11 +14,16 @@ function ProjectTemplate(props) {
     ]
 
 
-    const handleDelayClick = (e) => {
+    const handleDelayClick = (e, path) => {
+        console.log(e)
         props.setPageLeave(true)
         setTimeout(() => {
-            window.location.href = e.target.name
+            navigate(`/projects/${path}`)
         }, 1000)
+        setTimeout(() => {
+            props.setPageLeave(false)
+            window.scrollTo(0,0)
+        }, 1400);
     }
 
     useEffect(() => {
@@ -32,11 +38,11 @@ function ProjectTemplate(props) {
         return(
             currentPath !== `/projects/${links.pathname}`
         )
-    }).map((link) => {
+    }).map((link, index) => {
         return(
-            <Link className='link-tag' to={`/projects/${link.pathname}`}>
+            <div className='link-tag' onClick={(e) => handleDelayClick(e, link.pathname)}>
                 <h1 className='link-name'>{link.name}</h1>
-            </Link>
+            </div>
         )
     })
 
@@ -70,6 +76,9 @@ function ProjectTemplate(props) {
 
             </section>
             <section className='section-3'>
+
+            </section>
+            <section className='section-4'>
                 <div className='col-1'>
                     <div className='position'>
                         <h3>POSITION</h3>
@@ -85,13 +94,9 @@ function ProjectTemplate(props) {
                         <h3>WORK</h3>
                         <p>{props.position}</p>
                     </div>
-                    <div>
-                        <h3>YEAR</h3>
-                        <p>{props.year}</p>
-                    </div>
                 </div>
             </section>
-            <section className='section-4'>
+            <section className='section-5'>
                 {linksJsx}
             </section>
         </div>

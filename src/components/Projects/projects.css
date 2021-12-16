@@ -165,10 +165,54 @@
     }
 }
 
+.section-3 {
+    height: 100vh;
+}
+
 .section-4 {
+    width: 90%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 15px;
+}
+
+.col-1, .col-2 {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    width: 40%;
+}
+
+.position, .year, .work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-5 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 50vh;
+}
+
+.link-tag {
+    cursor: pointer;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.link-name {
+    font-size: 20px;
 }

@@ -6,13 +6,6 @@ import blenderVideos from '../../videos/blender-videos_VP9.webm'
 function About(props) {
     const [pageLoad, setPageLoad] = useState(false)
 
-    const handleDelayClick = (e) => {
-        props.setPageLeave(true)
-        setTimeout(() => {
-            window.location.href = e.target.name
-        }, 1000)
-    }
-
     useEffect(() => {
         setPageLoad(false)
         window.scrollTo(0,0)
@@ -47,7 +40,7 @@ function About(props) {
                     </p>
                     <p>
                         As for the future, I want to continue learning with a junior role in a more professional environment.
-                        I'm also really excited about the Web3 space and want to learn more about smart contracts and Solidity.
+                        I'm also really excited about the Web3 space and want to learn Solidity.
                         If you made it here, thanks for reading. I'll be updating this section as my career progress, so see you around!
                     </p>
                     <div className='about-1-art'>
