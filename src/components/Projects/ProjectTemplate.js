@@ -13,9 +13,14 @@ function ProjectTemplate(props) {
         {name: 'Madlibs!', pathname: 'mad-libs'}
     ]
 
+    const handleSiteClick = (e) => {
+        props.setPageLeave(true)
+        setTimeout(() => {
+            window.location.href = e.target.getAttribute('name')
+        }, 300);
+    }
 
     const handleDelayClick = (e, path) => {
-        console.log(e)
         props.setPageLeave(true)
         setTimeout(() => {
             navigate(`/projects/${path}`)
@@ -59,8 +64,8 @@ function ProjectTemplate(props) {
                     <img className='btc-anim' src={props.art} alt='art'/>
                 </div>
                 <div className='button-div'>
-                        <button name={props.link1} onClick={handleDelayClick}>Live Site</button>
-                        <button name={props.link2}  onClick={handleDelayClick}>Github Repo</button>
+                        <button name={props.link1} onClick={handleSiteClick}>Live Site</button>
+                        <button name={props.link2} onClick={handleSiteClick}>Github Repo</button>
                 </div>
             </section>
             <section className='section-2'>

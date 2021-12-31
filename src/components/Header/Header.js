@@ -88,6 +88,9 @@ function Header(props) {
                     </Link>
                 </div>
                 <div className={`projects-sub-div ${projectDropDown ? 'projects-div-visible' : ''}`}>
+                    <Link to='/projects/create' onClick={handlePLinkClick} className={navLinkClass}>
+                        <h1>Create</h1>
+                    </Link>
                     <Link to='/projects/what-if' onClick={handlePLinkClick} className={navLinkClass}>
                         <h1>What If?</h1>
                     </Link>

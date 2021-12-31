@@ -28,11 +28,10 @@ function App() {
         link1: 'https://brian99na.github.io/Create/',
         link2: 'https://github.com/brian99na/Create',
         secTitle1: 'My thought process.',
-        secPara: `The general perception of cryptocurrencies is that its a way of getting rich quick.
-        This often overshadows the utility of these coins.
-        This website guides users by showing them the aspect they are most familiar with in crypto, the sweet gains.
-        It then pivots to explain one of Bitcoin's use cases: being a hedge against inflation.
-        This can offer a different perspective on how crypto is offering solutions to massive problems in our financial systems.`
+        secPara: `My background is in filmmaking/editing/motion-graphics and I wanted a place to store snippets 
+        of work that I could easily show others. I found that a standard portfolio was too restricting
+        in adding new work and platforms like instagram didn't really feel like a proper setting to upload
+        my small W.I.P. artworks.`
       },
       {
         name: 'what-if',

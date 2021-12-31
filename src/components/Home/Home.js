@@ -107,6 +107,7 @@ function Home(props) {
             </section>
             <section className='home-2' ref={projectsRef}>
                 <h1 className='home-2-title'>Projects</h1>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='create' index={'0'} img={btc} title='Create' desc='Social Media Site for Visual Creators'/>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='what-if' index={'1'} img={btc} title='What If?' desc='Cryptocurrency Calculator'/>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='home-page' index={'2'} img={homepage} title='Home.' desc='Browser Homepage'/>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={btc} title='Madlibs!' desc='Word game'/>
