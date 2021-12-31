@@ -19,6 +19,22 @@ function App() {
 
   const templateArr = [
       {
+        name: 'Create',
+        color: 'color0',
+        art: btcAnim,
+        title1: 'Create',
+        title2: 'Media app for artists and creators',
+        title3: 'React, SASS, HTML, JavaScript, Django, Python',
+        link1: 'https://brian99na.github.io/Create/',
+        link2: 'https://github.com/brian99na/Create',
+        secTitle1: 'My thought process.',
+        secPara: `The general perception of cryptocurrencies is that its a way of getting rich quick.
+        This often overshadows the utility of these coins.
+        This website guides users by showing them the aspect they are most familiar with in crypto, the sweet gains.
+        It then pivots to explain one of Bitcoin's use cases: being a hedge against inflation.
+        This can offer a different perspective on how crypto is offering solutions to massive problems in our financial systems.`
+      },
+      {
         name: 'what-if',
         color: 'color1',
         art: btcAnim,
