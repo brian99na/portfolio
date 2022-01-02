@@ -3,16 +3,16 @@ import { Link, useNavigate } from 'react-router-dom'
 import './home.css'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import ProjectSlide from './ProjectSlide'
-import btc from '../../images/coinflip_img.png'
-import homepage from '../../images/0001.png'
 import Skills from './Skills'
 import { IoLogoJavascript, IoLogoHtml5, IoLogoCss3, IoLogoPython } from 'react-icons/io'
 import { SiExpress, SiMongodb, SiJquery, SiDjango, SiReact } from 'react-icons/si'
+import btc from '../../images/coinflip_img.png'
+import createArt from '../../images/android-chrome-512x512-removebg-preview.png'
+import madlibArt from '../../images/madlibs_00000.png'
+import homepageArt from '../../images/goodmorning_00000.png'
 
 function Home(props) {
     const [arrowClick, setArrowClick] = useState(false)
-    const [mainClick, setMainClick] = useState(false)
-    const [windowVal, setWindowVal] = useState(0)
     const navigate = useNavigate()
 
     const projectsRef = useRef()
@@ -107,10 +107,10 @@ function Home(props) {
             </section>
             <section className='home-2' ref={projectsRef}>
                 <h1 className='home-2-title'>Projects</h1>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='create' index={'0'} img={btc} title='Create' desc='Social Media Site for Visual Creators'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='create' index={'0'} img={createArt} title='Create' desc='Social Media Site for Visual Creators'/>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='what-if' index={'1'} img={btc} title='What If?' desc='Cryptocurrency Calculator'/>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='home-page' index={'2'} img={homepage} title='Home.' desc='Browser Homepage'/>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={btc} title='Madlibs!' desc='Word game'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='home-page' index={'2'} img={homepageArt} title='Home.' desc='Browser Homepage'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={madlibArt} title='Madlibs!' desc='Word game'/>
             </section>
             <section className='home-3' ref={skillsRef}>
                 <h1 className='home-3-title'>Skills</h1>

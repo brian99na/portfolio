@@ -8,6 +8,7 @@ function ProjectTemplate(props) {
     const navigate = useNavigate()
 
     const footerLinks = [
+        {name: 'Create', pathname: 'create'},
         {name: 'What If?', pathname: 'what-if'},
         {name: 'Home.', pathname: 'home-page'},
         {name: 'Madlibs!', pathname: 'mad-libs'}
@@ -46,7 +47,7 @@ function ProjectTemplate(props) {
     }).map((link, index) => {
         return(
             <div className='link-tag' onClick={(e) => handleDelayClick(e, link.pathname)}>
-                <h1 className='link-name'>{link.name}</h1>
+                <h1 className={`link-name-${index}`}>{link.name}</h1>
             </div>
         )
     })
@@ -78,10 +79,20 @@ function ProjectTemplate(props) {
                     <div className={`shape-2 ${props.color}`}></div>
                     <div className={`shape-3 ${props.color}`}></div>
                 </div>
-
             </section>
             <section className='section-3'>
-
+                <div className='section-3-inner'>
+                    <div className='section-3-text-1'>
+                        <img src={props.thirdImage1} alt=''/>
+                        <h1>{props.thirdTitle1}</h1>
+                        <p>{props.thirdPara1}</p>
+                    </div>
+                    <div className='section-3-text-2'>
+                        <img src={props.thirdImage2} alt=''/>
+                        <h1>{props.thirdTitle2}</h1>
+                        <p>{props.thirdPara2}</p>
+                    </div>
+                </div>
             </section>
             <section className='section-4'>
                 <div className='col-1'>
@@ -96,12 +107,13 @@ function ProjectTemplate(props) {
                 </div>
                 <div className='col-2'>
                     <div className='work'>
-                        <h3>WORK</h3>
-                        <p>{props.position}</p>
+                        <h3>Category</h3>
+                        <p>{props.category}</p>
                     </div>
                 </div>
             </section>
             <section className='section-5'>
+                <h1>More projects here</h1>
                 {linksJsx}
             </section>
         </div>

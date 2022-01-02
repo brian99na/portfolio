@@ -4,6 +4,10 @@
     font-size: 40px;
 }
 
+.color0 {
+    background-image: url('../../images/overlay.png'), linear-gradient(180deg, rgb(226, 104, 104) 0%, rgb(255, 179, 179) 100%);
+}
+
 .color1 {
     background-image: url('../../images/overlay.png'), linear-gradient(180deg, rgb(250, 216, 143) 0%, rgb(235, 235, 235) 100%);
 }
@@ -24,7 +28,7 @@
     width: 100vw;
     opacity: 1;
     transform: translateY(0);
-    transition: 1s ease;
+    transition: 0.5s ease;
 }
 
 .page-leave {
@@ -79,10 +83,13 @@
 
 .btc-anim-container {
     height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btc-anim {
-    width: 100%;
+    width: 90%;
 }
 
 .section-2 {
@@ -166,7 +173,33 @@
 }
 
 .section-3 {
+    height: fit-content;
+}
+
+.section-3-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section-3-text-1, .section-3-text-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     height: 100vh;
+    width: 90%;
+    gap: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.section-3-text-1 img, .section-3-text-2 img {
+    max-height: 50%;
+    width: 100%;
+    align-self: center;
+    filter: drop-shadow(0px 0px 6px rgb(233, 233, 233))
 }
 
 .section-4 {
@@ -175,9 +208,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10%;
     border: 1px solid rgb(202, 202, 202);
     border-radius: 15px;
+    background-color: rgb(253, 253, 253);
+    filter: drop-shadow(4px 4px 1px rgb(233, 233, 233))
 }
 
 .col-1, .col-2 {
@@ -185,14 +219,25 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2em;
-    width: 40%;
+    align-items: center;
+    overflow-wrap: break-all;
+    width: 50%;
+}
+
+.col-1 {
+    gap: 10px;
+    border-right: 1px solid rgb(209, 209, 209);
 }
 
 .position, .year, .work {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 80%;
+}
+
+.position, .year {
+    text-align: right;
 }
 
 .section-5 {
@@ -201,18 +246,41 @@
     justify-content: center;
     align-items: center;
     height: 50vh;
+    width: 80%;
+    gap: 10px;
+}
+
+.section-5 h1 {
+    font-size: 30px;
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 400;
 }
 
 .link-tag {
     cursor: pointer;
-    height: 40%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
-.link-name {
-    font-size: 20px;
+.link-tag h1 {
+    font-size: 40px;
+    font-weight: 500;
+    padding: 5px 10px;
+    color: rgb(100, 102, 104);
+    border-bottom: 2px solid rgb(231, 231, 231);
+    border-left: 2px solid rgb(231, 231, 231);
+    border-radius: 0 0 0 5px;
+}
+
+.link-name-0 {
+    align-self: flex-start;
+}
+
+.link-name-2 {
+    align-self: flex-end;
 }

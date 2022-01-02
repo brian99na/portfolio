@@ -219,7 +219,9 @@
 }
 
 .project-title h1 {
-    font-size: 30px;
+    font-size: 40px;
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 900;
 }
 
 .project-title p {
@@ -228,7 +230,7 @@
 }
 
 .project-0 .project-title h1, .project-0 .project-title p{
-    color: rgb(252, 252, 252);
+    color: rgb(39, 39, 39);
 }
 
 .project-0 .project-title p {
@@ -247,17 +249,21 @@
     border: 1px solid rgb(128, 128, 128)
 }
 
-.img-1, .img-0 {
+.img-0 {
+    width: 50%;
+}
+
+.img-1 {
     width: 70%;
     bottom: 0;
 }
 
 .img-2 {
-    width: 100%;
+    width: 90%;
 }
 
 .img-3 {
-    width: 70%;
+    width: 60%;
     bottom: 0;
 }
 
@@ -356,6 +362,7 @@
     padding: 5px;
     outline: none;
     backdrop-filter: blur(15px);
+    resize: none;
 }
 
 .input-form button {
