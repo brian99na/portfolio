@@ -25,11 +25,11 @@ function ProjectTemplate(props) {
         props.setPageLeave(true)
         setTimeout(() => {
             navigate(`/projects/${path}`)
-        }, 1000)
+        }, 500)
         setTimeout(() => {
             props.setPageLeave(false)
             window.scrollTo(0,0)
-        }, 1400);
+        }, 1000);
     }
 
     useEffect(() => {
@@ -113,8 +113,10 @@ function ProjectTemplate(props) {
                 </div>
             </section>
             <section className='section-5'>
-                <h1>More projects here</h1>
-                {linksJsx}
+                <h1 className='section-5-title'>More projects here</h1>
+                <div className='links-upper'>
+                    {linksJsx}
+                </div>
             </section>
         </div>
     )

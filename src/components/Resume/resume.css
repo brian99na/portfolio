@@ -71,3 +71,13 @@
     max-width: 90%;
     max-height: 90%;
 }
+
+@media only screen and (min-width: 768px) {
+    .resume-container .section-1 button {
+        width: 70%;
+    }
+
+    .resume-container .section-1-text {
+        width: 70%;
+    }
+}

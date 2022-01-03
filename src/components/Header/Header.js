@@ -69,6 +69,9 @@ function Header(props) {
     }
 
     const navLinkClass = `nav-links ${navReveal ? 'itemVisible' : ''}`
+    const navLinkClassAbout = `nav-links nav-about ${navReveal ? 'itemVisible' : ''}`
+    const navLinkClassResume = `nav-links nav-resume ${navReveal ? 'itemVisible' : ''}`
+
 
     return (
         <nav className='nav-container'>
@@ -84,8 +87,22 @@ function Header(props) {
                 <div className='projects-container'>
                     <MdKeyboardArrowDown className={`projects-drop-arrow ${navReveal ? 'drop-active' : ''}`} onClick={dropDownClick}/>
                     <Link to='/' onClick={handleProjectsClick} className={navLinkClass}>
-                        <h1>Projects</h1>
+                        <h1 className='projects-title'>Projects</h1>
                     </Link>
+                    <div className={`projects-sub-div-desktop ${projectDropDown ? 'projects-desk-visible' : ''}`}>
+                        <Link to='/projects/create' onClick={handlePLinkClick} className={navLinkClass}>
+                            <h1>Create</h1>
+                        </Link>
+                        <Link to='/projects/what-if' onClick={handlePLinkClick} className={navLinkClass}>
+                            <h1>What If?</h1>
+                        </Link>
+                        <Link to='/projects/home-page' onClick={handlePLinkClick} className={navLinkClass}>
+                            <h1>Home.</h1>
+                        </Link>
+                        <Link to='/projects/mad-libs' onClick={handlePLinkClick} className={navLinkClass}>
+                            <h1>Madlibs!</h1>
+                        </Link>
+                    </div>
                 </div>
                 <div className={`projects-sub-div ${projectDropDown ? 'projects-div-visible' : ''}`}>
                     <Link to='/projects/create' onClick={handlePLinkClick} className={navLinkClass}>
@@ -101,10 +118,10 @@ function Header(props) {
                         <h1>Madlibs!</h1>
                     </Link>
                 </div>
-                <Link to='/about' onClick={handleLinkClick} className={navLinkClass}>
+                <Link to='/about' onClick={handleLinkClick} className={navLinkClassAbout}>
                     <h1>About Me</h1>
                 </Link>
-                <Link to='/resume' onClick={handleLinkClick} className={navLinkClass}>
+                <Link to='/resume' onClick={handleLinkClick} className={navLinkClassResume}>
                     <h1>Resume</h1>
                 </Link>
                 <Link to='/' onClick={handleContactClick} className={navLinkClass}>

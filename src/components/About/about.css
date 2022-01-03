@@ -85,3 +85,27 @@
     width: 100%;
     filter: drop-shadow(5px 5px 1px rgb(218, 218, 218));
 }
+
+@media only screen and (min-width: 768px) {
+    .about {
+        padding: 0 0 15vh 0;
+        background-color: rgb(243, 243, 243);
+    }
+
+    .about-1 {
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .about-1, .about-2, .about-3 {
+        width: 70%;
+    }
+
+    .about-1-text p, .about-2-text p, .about-3-text p {
+        font-size: 30px;
+    }
+
+    .about-1-text h1, .about-2-text h1, .about-3-text h1 {
+        font-size: 40px;
+    }
+}

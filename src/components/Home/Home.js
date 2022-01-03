@@ -97,7 +97,7 @@ function Home(props) {
                         <AiOutlineArrowDown className={`icons-2 ${arrowClick ? 'icon-click-2' : ''}`} onClick={() => handleColorClick(skillsRef)}/>
                         <AiOutlineArrowDown className={`icons-3 ${arrowClick ? 'icon-click-3' : ''}`} onClick={() => handleColorClick(contactRef)}/>
                         <Link className={`button-link ${arrowClick ? 'invisible' : ''}`} to='/about'>
-                            <button name='about' className='real-button' onClick={handleDelayClick}>More about me</button>
+                            <button name='about' className='real-button' onClick={handleDelayClick}>more about me</button>
                         </Link>
                     </div>
                 </div>
@@ -107,10 +107,10 @@ function Home(props) {
             </section>
             <section className='home-2' ref={projectsRef}>
                 <h1 className='home-2-title'>Projects</h1>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='create' index={'0'} img={createArt} title='Create' desc='Social Media Site for Visual Creators'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='create' index={'0'} img={createArt} title='Create' desc='Social Media Website'/>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='what-if' index={'1'} img={btc} title='What If?' desc='Cryptocurrency Calculator'/>
                 <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='home-page' index={'2'} img={homepageArt} title='Home.' desc='Browser Homepage'/>
-                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={madlibArt} title='Madlibs!' desc='Word game'/>
+                <ProjectSlide pageLeave={props.pageLeave} setPageLeave={props.setPageLeave} link='mad-libs' index={'3'} img={madlibArt} title='Madlibs!' desc='Random Word Game'/>
             </section>
             <section className='home-3' ref={skillsRef}>
                 <h1 className='home-3-title'>Skills</h1>
