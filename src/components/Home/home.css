@@ -470,7 +470,7 @@
     }
 
     .project-0:hover, .project-3:hover, .project-1:hover, .project-2:hover {
-        filter: drop-shadow(0 0 6px rgb(175, 175, 175)) grayscale(1);
+        filter: drop-shadow(0 0 6px rgb(175, 175, 175)) grayscale(0.4);
     }
 
     .img-0 {
@@ -513,7 +513,7 @@
     }
 
     .project-title h1 {
-        font-size: 130px;
+        font-size: 100px;
     }
 
     .project-0:hover .project-title, .project-1:hover .project-title, .project-2:hover .project-title, .project-3:hover .project-title {
@@ -533,6 +533,25 @@
         padding: 10px;
         border: 1px solid rgb(235, 235, 235);
         border-radius: 5px;
+    }
+
+    .skills-container::-webkit-scrollbar {
+        height: 10px;
+    }
+
+    .skills-container::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: rgb(235, 235, 235);
+    }
+
+    .skills-container::-webkit-scrollbar-thumb {
+        background: url('../../images/overlay.png'), linear-gradient(90deg, rgba(167,220,226,1) 0%, rgb(240, 157, 193) 100%);;
+        border-radius: 10px;
+        transition: 1s ease;
+    }
+
+    .skills-container::-webkit-scrollbar-thumb:hover {
+
     }
 
     .skills {

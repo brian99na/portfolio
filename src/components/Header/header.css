@@ -246,6 +246,8 @@ h1 {
         pointer-events: all;
         background-color: transparent;
         backdrop-filter: blur(4px);
+        cursor: pointer;
+        transition: 0.5s ease;
     }
 
     .navHome {
@@ -267,20 +269,40 @@ h1 {
     .nav-links, .projects-drop-arrow {
         color: black;
         opacity: 1;
-        transform: translateY(0);
+        transform: rotate(0);
         pointer-events: all;
         width: 20%;
         padding: 0;
+        transition: 0.5s ease;
+        cursor:pointer;
+    }
+
+    .nav-links, .projects-drop-arrow:hover {
+        animation: arrowPop 1s cubic-bezier(0,.76,.14,.99);
     }
 
     .nav-links {
         width: 15%;
         pointer-events: auto;
+        white-space: nowrap;
     }
     
     .nav-links h1 {
         font-size: 30px;
         width: fit-content;
+        transition: 0.5s ease;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .nav-link-container .nav-links h1:hover {
+        background-color: rgb(240, 240, 240);
+        margin: 5px 10px;
+    }
+
+    .nav-link-container .projects-container .nav-links h1:hover {
+        margin: 0;
+        background-color: rgb(240, 240, 240);
     }
 
     .nav-resume{
@@ -326,7 +348,7 @@ h1 {
         width: fit-content;
         pointer-events: none;
         right: 0;
-        bottom: -220%;
+        bottom: -300%;
         border-radius: 15px;
         padding: 10px 10%;
         backdrop-filter: blur(15px);
@@ -375,5 +397,15 @@ h1 {
 
     .itemVisible {
         transform: translateX(0);
+    }
+}
+
+@keyframes arrowPop {
+    100%, 0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
     }
 }
