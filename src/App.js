@@ -5,7 +5,7 @@ import Resume from './components/Resume/Resume'
 import About from './components/About/About'
 import ProjectTemplate from './components/Projects/ProjectTemplate';
 import { Routes, Route } from 'react-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import btcAnim from './images/coinflip_img.png'
 import whatif1 from './images/whatifArt1_00000.png'
 import whatif2 from './images/whatifArt2.png'
@@ -38,23 +38,23 @@ function App() {
         link1: 'https://brian99na.github.io/Create/',
         link2: 'https://github.com/brian99na/Create',
         secTitle1: 'My thought process.',
-        secPara: `My background is in filmmaking/editing/motion-graphics and I wanted a place to store snippets 
+        secPara: `My background is in all types of media creation and I wanted a place to store snippets 
         of work that I could easily show others. I found that a standard portfolio was too restricting
-        in adding new work and platforms like instagram didn't really feel like a proper setting to upload
-        my small W.I.P. artworks.`,
+        and platforms like instagram didn't really feel like a proper setting to upload my small W.I.P. artworks.
+        I think the simplicity of a site like Create is what I really wanted.`,
         thirdTitle1: 'Highlights.',
         thirdImage1: create1,
-        thirdPara1: `I really loved working on connecting the backend with a user interface. With how easy
-        Django makes user authentication with built in models, you could get a backend up and functioning relatively quickly.
-        This was my first time working with classes and using some OOP with inheritance so that was really interesting. 
-        I've barely scratched the surface of OOP and I want to base a whole project around it in the future. Using AWS S3 buckets was 
-        a breeze, locally, but a horror when trying to get the project deployed.`,
+        thirdPara1: `I loved the process of creating a full stack application. From testing your backend views/urls through postman to actually 
+        implementing it into your frontend, it all gave me a good perspective on what goes on when communicating on different fronts.
+        User authentication with Django was amazing because it was already built in. Changing or adding fields was just a matter
+        of inheriting the already implemented model. I also dove into AWS S3 buckets and was able to successfully upload and store files
+        from the frontend and through the user admin panel.`,
         thirdTitle2: 'Struggles.',
         thirdImage2: create2,
-        thirdPara2: `Deployment to Heroku had a lot of issues and these issues were mainly involving the S3 bucket uploading.
-        It would simply not cooperate in uploading to the correct directory, or any directory at all. There was also a lot of issues
-        around form submission from the frontend to the backend. The tags array had to be formatted in a certain way in order for it to be
-        recognized by django as a valid submission. I solved this by stringifying the array on submission and splitting it on retrieval.`,
+        thirdPara2: `A lot of time was spent deploying to Heroku, so I couldn't implement as many features as I would've liked. 
+        I still want more fields added to the user and post models such as a bio, likes on posts, post bookmarks, etc. My
+        S3 bucket upload functionality broke when it was deployed, so I am also currently trying to get it up and running. For now, 
+        I have replaced that feature with a text field where users can add a direct link to their own uploaded videos or images.`,
         position: 'Independent Project',
         year: '2021',
         category: 'Full-Stack Web Application'
@@ -70,7 +70,7 @@ function App() {
         link2: 'https://github.com/brian99na/what-if',
         secTitle1: 'My thought process.',
         secPara: `The general perception of cryptocurrencies is that its a way of getting rich quick.
-        This often overshadows the utility of these coins.
+        This often overshadows the utility these coins provide.
         This website guides users by showing them the aspect they are most familiar with in crypto, the sweet gains.
         It then pivots to explain one of Bitcoin's use cases: being a hedge against inflation.
         This can offer a different perspective on how crypto is offering solutions to massive problems in our financial systems.`,
@@ -78,12 +78,15 @@ function App() {
         thirdImage1: whatif1,
         thirdPara1: `This project really helped me understand the way React renders items and stores states.
         My big takeaways are conditional rendering and formatting Jsx in a way that accounts for data that hasn't been fetched yet.
-        Using a new library like Recharts was amazing and pretty eyeopening on how these resources can enhance your projects by a ton.`,
+        Using a library like Recharts was amazing and made me appreciate the importance of creating a visual
+        representation of data that you present on your page.`,
         thirdTitle2: 'Struggles.',
         thirdImage2: whatif2,
         thirdPara2: `Traversing deep into objects was one of my greatest challenges. Getting that 'cannot read undefined' error haunted me
-        until I finally understood how to load API data into states that were already formatted in the same way. I also ran into some performance
-        issues which I believe was due to some CSS settings, but found that it was only on my computer when testing on different devices.`,
+        until I finally understood how to load API data into states that were already formatted in the same way. I also became aware of how
+        performance can differ between devices as I ran into some performance issues due to some CSS settings. I found that it was only 
+        on my computer when testing on different devices. I now test my websites on different devices and use throttling on chrome to see 
+        how data loads in and whether I need to accommodate for loading times with skeleton animations.`,
         position: 'Independent Project',
         year: '2021',
         category: 'Front-End Web Application '
@@ -100,18 +103,19 @@ function App() {
         secTitle1: 'About.',
         secPara: `I created this project hoping to gain more experience with APIs. It began with the aim of cloning
         an addon called Momentum, but quickly evolved into a mixture of that and the google chrome new tab page. 
-        It uses a weather and background API and localstorage to save user added website shortcuts.
-        to save user added websites.`,
+        It uses a weather and background API and localstorage to save user added website shortcuts.`,
         thirdTitle1: 'Highlights.',
         thirdImage1: home1,
         thirdPara1: `This project gave me the much needed practice with using APIs. 
-        I really enjoyed working with localstorage because I had just learned MongoDB and it felt familiar to me.
-        I was able to transfer this knowledge to a later project called Create with storing authentication tokens.`,
+        I was able to get a head start working with localStorage which I later used in my fullstack application which utilized tokens.
+        This once again taught me the fundamentals of React states and a lot of vanilla javascript methods such as Date. It also helped me connect
+        different resources to each other, such as grabbing the correct icon from another site based on the current weather conditions provided from the api, or
+        the website icons based on the user input data. `,
         thirdTitle2: 'Struggles.',
         thirdImage2: home2,
         thirdPara2: `This project was so much more complicated that it appeared on the surface. There was so many
-        intricacies with setting up the time format, setting up the weather icons from a different resource to match 
-        weather conditions from the API, and much more. `,
+        intricacies with setting up the time format using splits and joins, linking up the weather icons to match 
+        current weather conditions, and much more.`,
         position: 'Independent Project',
         year: '2021',
         category: 'Front-End Web Application'
@@ -139,7 +143,7 @@ function App() {
         thirdPara2: `The team aspect was definitely a change of pace and environment. One of our team members formatted our
         seed data in the backend into an object of arrays instead of an array of objects which made it hard to work with. I found that you
         can't be afraid to step on some toes and it is essential to communicate with team members on what you need from them and ask what they need from you.`,
-        position: 'Backend Routes & User Model, Frontend Styling & Game/Results Page',
+        position: 'Group Project - Backend Routes & User Model, Frontend Styling & Game/Results Page',
         year: '2021',
         category: 'Full-Stack Web Application'
       }
@@ -154,6 +158,10 @@ function App() {
         thirdImage1={project.thirdImage1} thirdImage2={project.thirdImage2} category={project.category} position={project.position} year={project.year}/>}/>
     )
   })
+
+  useEffect(() => {
+    document.title = "Hey, it's Brian"
+  }, [])
 
   return (
     <div className="App">

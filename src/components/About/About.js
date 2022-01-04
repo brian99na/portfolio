@@ -52,10 +52,11 @@ function About(props) {
                         <div className='about-2-text'>
                             <h1>Where I'm at now.</h1>
                             <p>
-                                I decided to take on web development when I built a creative portfolio last year.
-                                I found that it gave me a lot of creative freedom in envisioning a website and bringing it to life it.
-                                I have now finished a software engineering bootcamp that was both extremely rigorous, but even more rewarding.
-                                I have a lot of skills in web development and backend technologies. I feel confident in my future.
+                                I still love to create small clips using after effects or blender in my free time, whenever I do have free time that is.
+                                I've found a new passion, software development! I recently finished the project I've been wanting to create, a creative social
+                                media style portfolio website. The first time I touched code was when I wanted to create a portfolio website where my
+                                artworks could live, and now it feels like I've come full circle. I have also now finished my software engineering bootcamp 
+                                that was extremely rigorous, but even more rewarding. I feel like I have gained so much experience on all fronts, and I feel confident in my future as a developer.
                             </p>
                         </div>
                     </section>
@@ -65,8 +66,9 @@ function About(props) {
                             <h1>Where I want to be.</h1>
                             <p>
                                 I want to continue learning in a junior role in a professional environment.
-                                I'm also really excited about the Web3 space and want to learn Solidity.
-                                If you made it here, thanks for reading. I'll be updating this section as my career progress, so see you around!
+                                Over the next few months, I think I will try to dedicate a lot more time into refining my projects and learning more about the
+                                fundamentals of computer science. I'm also really excited to try new technologies and I'm interested in the Web3 space and all
+                                it has to offer. If you made it here, thanks for reading. I'll be updating this section as my career progress, so see you around :)
                             </p>
                         </div>
                     </section>

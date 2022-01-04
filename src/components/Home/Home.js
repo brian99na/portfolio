@@ -98,7 +98,7 @@ function Home(props) {
             <section className='home-1'>
                 <div className='home-1-text'>
                     <h1>Hi, I'm Brian.</h1>
-                    <p>I'm a Fullstack Web Developer with a love for all things creative and technical. Check out some of my work below.</p>
+                    <p>I'm a Fullstack Developer with a love for all things creative and technical. Learn more about me and the work I do below.</p>
                     <div className={`button-arr ${'button-arr-click'}`}>
                         <AiOutlineArrowDown className={`icons ${arrowClick ? 'icon-click' : ''}`} onClick={handleArrowClick}/>
                         <AiOutlineArrowDown className={`icons-1 ${arrowClick ? 'icon-click-1' : ''}`} onClick={() => handleColorClick(projectsRef)}/>
