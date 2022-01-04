@@ -15,7 +15,6 @@ import homepageArt from '../../images/goodmorning_00000.png'
 function Home(props) {
     const [arrowClick, setArrowClick] = useState(false)
     const navigate = useNavigate()
-    const [email, setEmail] = useState(false)
     const projectsRef = useRef()
     const skillsRef = useRef()
     const contactRef = useRef()
@@ -66,7 +65,6 @@ function Home(props) {
     }
 
     const handleFormSubmit = (e) => {
-        setEmail(true)
         setTimeout(() => {
             alert("I've received your message, thank you!")
         }, 500);
@@ -131,7 +129,6 @@ function Home(props) {
                 </div>
             </section>
             <section className='home-4' ref={contactRef}>
-                {email && <h1>I've received your email, thanks!</h1>}
                 <h1>Get in touch</h1>
                 <form className='input-form' action="https://formsubmit.co/brian99na@gmail.com" method='POST' onSubmit={handleFormSubmit}>
                     <div className='input-divs'>
