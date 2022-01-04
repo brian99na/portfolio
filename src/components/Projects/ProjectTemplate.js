@@ -47,11 +47,12 @@ function ProjectTemplate(props) {
     }).map((link, index) => {
         return(
             <div className='link-tag' onClick={(e) => handleDelayClick(e, link.pathname)}>
-                <h1 className={`link-name-${index}`}>{link.name}</h1>
+                <h1 className={`link-name-${index} link-${props.index}`}>{link.name}</h1>
             </div>
         )
     })
 
+    console.log(props.index)
 
     return (
         <div className={`project-container ${props.pageLeave ? 'page-leave' : ''}`}>
@@ -60,6 +61,10 @@ function ProjectTemplate(props) {
                     <h1>{props.title1}</h1>
                     <p>{props.title2}</p>
                     <p>{props.title3}</p>
+                    <div className='desk-button-div'>
+                        <button name={props.link1} onClick={handleSiteClick}>Live Site</button>
+                        <button name={props.link2} onClick={handleSiteClick}>Github Repo</button>
+                    </div>
                 </div>
                 <div className='btc-anim-container'>
                     <img className='btc-anim' src={props.art} alt='art'/>

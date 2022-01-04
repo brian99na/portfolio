@@ -145,9 +145,9 @@ function App() {
       }
   ]
 
-  const projectsJsx = templateArr.map((project) => {
+  const projectsJsx = templateArr.map((project, index) => {
     return(
-      <Route path={`/projects/${project.name}`} exact element={<ProjectTemplate pageLeave={pageLeave} setPageLeave={setPageLeave}
+      <Route path={`/projects/${project.name}`} exact element={<ProjectTemplate index={index} pageLeave={pageLeave} setPageLeave={setPageLeave}
         title1={project.title1} title2={project.title2} title3={project.title3} link1={project.link1} link2={project.link2}
         secTitle1={project.secTitle1} secPara={project.secPara} color={project.color} art={project.art}
         thirdTitle1={project.thirdTitle1} thirdTitle2={project.thirdTitle2} thirdPara1={project.thirdPara1} thirdPara2={project.thirdPara2}

@@ -20,6 +20,7 @@ h1 {
 html {
   width: 100vw;
   background-color: rgb(250, 250, 250);
+  overflow-x: hidden;
 }
 
 body {
@@ -44,6 +45,12 @@ button {
   border-radius: 15px;
   font-size: 20px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: rgb(54, 54, 54);
+  color: rgb(245, 245, 245);
 }
 
 .visible {

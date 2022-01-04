@@ -17,7 +17,7 @@
 }
 
 .color3 {
-    background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgb(255, 161, 213) 0%, rgb(235, 235, 235) 100%);
+    background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgb(255, 247, 235) 0%, rgb(235, 235, 235) 100%);
 }
 
 .project-container {
@@ -77,6 +77,10 @@
     border: 1px solid rgb(245, 245, 245);
 }
 
+.desk-button-div {
+    display: none;
+}
+
 .text-container > * {
     width: 100%;
 }
@@ -113,7 +117,7 @@
 
 .section-2-text {
     width: 80%;
-    height: fit-content;
+    height: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -285,15 +289,20 @@
 .link-tag h1 {
     font-family: 'Darker Grotesque', sans-serif;
     font-weight: 500;
-    font-size: 40px;
+    font-size: 30px;
     padding: 5px 10%;
     color: rgb(100, 102, 104);
     border-bottom: 2px solid rgb(231, 231, 231);
     border-left: 2px solid rgb(231, 231, 231);
     border-radius: 0 0 0 5px;
+    white-space: nowrap;
 }
 
 @media only screen and (min-width: 768px) {
+    .project-container {
+        padding: 0 0 10vh 0;
+    }
+
     .section-1-text p, .button-div button, .section-3-text-1 p, .section-3-text-2 p{
         font-size: 30px;
     }
@@ -304,6 +313,7 @@
 
     .section-2-text {
         padding: 15% 5%;
+        height: fit-content;
     }
 
     .section-2-text h1 {
@@ -332,5 +342,146 @@
 
     .link-tag h1 {
         font-size: 50px;
+    }
+
+    .shape-1, .shape-2, .shape-3 {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .section-1 {
+        flex-direction: row;
+        height: 65vh;
+    }
+
+    .section-1-text {
+        width: 35%;
+        height: fit-content;
+        gap: 5px;
+    }
+
+    .btc-anim-container {
+        width: 35%;
+        height: fit-content;
+    }
+
+    .btc-anim {
+        height: auto;
+        width: 80%;
+    }
+
+    .desk-button-div {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 5%;
+        padding: 5% 0 0 0;
+    }
+
+    .desk-button-div button{
+        border-radius: 5px;
+        width: 45%;
+        border: 1px solid rgb(245, 245, 245);
+    }
+
+    .button-div {
+        display: none;
+    }
+
+    .section-2 {
+        height: 75vh;
+    }
+
+    .section-2-text {
+        width: 50%;
+        height: fit-content;
+        padding: 5vw;
+    }
+
+    .shape-1, .shape-2, .shape-3 {
+        width: 15%;
+    }
+
+    .shape-1 {
+
+    }
+
+    .shape-2 {
+        left: 8%;
+        bottom: 5%;
+    }
+
+    .shape-3 {
+        right: 10%;
+        bottom: 36%;
+    }
+
+    .section-3-text-1, .section-3-text-2 {
+        width: 50%;
+    }
+
+    .section-4 {
+        width: 50%;
+    }
+
+    .link-name-0, .link-name-1, .link-name-2, .link-name-3{
+        transition: 0.5s ease;
+    }
+
+    .link-0:hover {
+        color: rgb(255, 116, 116);
+        transform: translateX(30px);
+    }
+
+    .link-1:hover {
+        color: rgb(247, 199, 95);
+        transform: translateX(30px);
+    }
+
+    .link-2:hover {
+        color: rgb(143, 186, 250);
+        transform: translateX(30px);
+    }
+
+    .link-3:hover {
+        color: rgb(235, 227, 217);
+        transform: translateX(30px);
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .section-1-text {
+        width: 25%;
+        height: fit-content;
+        gap: 5px;
+    }
+
+    .btc-anim-container {
+        width: 25%;
+        height: fit-content;
+    }
+
+    .section-2-text {
+        width: 45%;
+        padding: 2.5%;
+    }
+
+    .shape-1, .shape-2, .shape-3 {
+        width: 12%;
+    }
+
+    .shape-1 {
+        top: 10%;
+        left: 20%;
+    }
+
+    .shape-2 {
+        left: 20%;
+        bottom: 8%;
+    }
+
+    .shape-3 {
+        right: 15%;
     }
 }

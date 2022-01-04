@@ -21,6 +21,7 @@ function Header(props) {
 
     const handleHomeClick = (e) => {
         props.setPageLeave(true)
+        setProjectDropDown(false)
         setTimeout(() => {
             if (location.pathname === '/') {
                 props.setPageLeave(false)
@@ -33,6 +34,7 @@ function Header(props) {
     const handleLinkClick = () => {
         setNavReveal(!navReveal)
         props.setPageLeave(true)
+        setProjectDropDown(false)
         setTimeout(() => {
             props.setPageLeave(false)
             setProjectDropDown(false)
@@ -41,6 +43,7 @@ function Header(props) {
 
     const handleContactClick = () => {
         props.setPageLeave(true)
+        setProjectDropDown(false)
         setTimeout(() => {
             setNavReveal(!navReveal)
             props.setContactHeader(!props.contactHeader)
@@ -51,6 +54,7 @@ function Header(props) {
 
     const handleProjectsClick = () => {
         props.setPageLeave(true)
+        setProjectDropDown(false)
         setTimeout(() => {
             setNavReveal(!navReveal)
             props.setProjectHeader(!props.projectHeader)
@@ -61,11 +65,25 @@ function Header(props) {
 
     const handlePLinkClick = () => {
         props.setPageLeave(true)
+        setProjectDropDown(false)
         setTimeout(() => {
             setNavReveal(!navReveal)
             props.setPageLeave(false)
             setProjectDropDown(false)
         }, 300)        
+    }
+
+    const handleDeskLinkClick = (e) => {
+        console.log(e)
+        props.setPageLeave(true)
+        setProjectDropDown(false)
+        setTimeout(() => {
+            setNavReveal(false)
+            navigate(e.target.getAttribute('name'))
+            setTimeout(() => {
+                props.setPageLeave(false)
+            }, 300);
+        }, 500);
     }
 
     const navLinkClass = `nav-links ${navReveal ? 'itemVisible' : ''}`
@@ -90,18 +108,18 @@ function Header(props) {
                         <h1 className='projects-title'>Projects</h1>
                     </Link>
                     <div className={`projects-sub-div-desktop ${projectDropDown ? 'projects-desk-visible' : ''}`}>
-                        <Link to='/projects/create' onClick={handlePLinkClick} className={navLinkClass}>
-                            <h1>Create</h1>
-                        </Link>
-                        <Link to='/projects/what-if' onClick={handlePLinkClick} className={navLinkClass}>
-                            <h1>What If?</h1>
-                        </Link>
-                        <Link to='/projects/home-page' onClick={handlePLinkClick} className={navLinkClass}>
-                            <h1>Home.</h1>
-                        </Link>
-                        <Link to='/projects/mad-libs' onClick={handlePLinkClick} className={navLinkClass}>
-                            <h1>Madlibs!</h1>
-                        </Link>
+                        <div className={navLinkClass}>
+                            <h1 name='/projects/create' onClick={handleDeskLinkClick} >Create</h1>
+                        </div>
+                        <div className={navLinkClass}>
+                            <h1 name='/projects/what-if' onClick={handleDeskLinkClick} >What If?</h1>
+                        </div>
+                        <div className={navLinkClass}>
+                            <h1 name='/projects/home-page' onClick={handleDeskLinkClick} >Home.</h1>
+                        </div>
+                        <div className={navLinkClass}>
+                            <h1 name='/projects/mad-libs' onClick={handleDeskLinkClick} >Madlibs!</h1>
+                        </div>
                     </div>
                 </div>
                 <div className={`projects-sub-div ${projectDropDown ? 'projects-div-visible' : ''}`}>

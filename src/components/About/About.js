@@ -3,9 +3,18 @@ import  './about.css'
 import boatImg from '../../images/meonboat_00000.png'
 import blenderVideos from '../../videos/blender-videos_VP9.webm'
 import tags from '../../images/tags_00000.png'
+import { useNavigate } from 'react-router-dom'
 
 function About(props) {
     const [pageLoad, setPageLoad] = useState(false)
+    const navigate = useNavigate()
+
+    const handleNavigate = (e) => {
+        props.setPageLeave(true)
+        setTimeout(() => {
+            navigate(e.target.getAttribute('name'))
+        }, 500);
+    }
 
     useEffect(() => {
         setPageLoad(false)
@@ -59,6 +68,13 @@ function About(props) {
                                 I'm also really excited about the Web3 space and want to learn Solidity.
                                 If you made it here, thanks for reading. I'll be updating this section as my career progress, so see you around!
                             </p>
+                        </div>
+                    </section>
+                    <section className='about-footer'>
+                        <h1>Continue to...</h1>
+                        <div className='back-next-btns'>
+                            <p className='footer-home' name='/' onClick={handleNavigate}>Home</p>
+                            <p className='footer-resume' name='/resume' onClick={handleNavigate}>Resume</p>
                         </div>
                     </section>
                 </section>

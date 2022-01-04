@@ -28,6 +28,10 @@
     text-align: left;
 }
 
+.desk-button {
+    display: none;
+}
+
 .resume-container .section-1-text h1, p {
     width: 100%;
 }
@@ -42,16 +46,14 @@
     font-size: 30px;
 }
 
-.resume-container .section-1 button {
+.mob-button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90%;
     border-radius: 5px;
-    background-color: rgb(197, 197, 197, 0);
-    color: white;
+    color: rgb(65, 65, 65);
     border: 1px solid white;
-    backdrop-filter: blur(5px);
     font-weight: 800;
     padding: 5px 0;
 }
@@ -73,11 +75,52 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .resume-container .section-1 button {
+    .mob-button {
         width: 70%;
     }
 
     .resume-container .section-1-text {
         width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+
+    .resume-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .resume-container .section-1 {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        height: 70vh;
+        padding: 0 100%;
+    }
+
+    .resume-container .section-1-text {
+        width: 50%;
+    }
+
+    .resume-icon1 {
+        width: fit-content;
+        font-size: 250px;
+    }
+
+    .desk-button {
+        display: flex;
+        border-radius: 5px;
+        align-self: flex-start;
+        justify-content: center;
+        width: 80%;
+        margin: 10px 0;
+        font-size: 24px;
+    }
+
+    .mob-button {
+        display: none;
     }
 }

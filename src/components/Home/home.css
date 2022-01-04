@@ -4,7 +4,7 @@
   }
 
 .home-container {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,7 +211,7 @@
 }
 
 .project-3 {
-    background-image: url('../../images/overlay.png'), linear-gradient(235deg, rgb(255, 161, 213) 0%, rgb(255, 225, 241) 100%);
+    background-image: url('../../images/overlay.png'), linear-gradient(0deg, rgb(255, 247, 235) 0%, rgb(235, 235, 235) 100%);
 }
 
 .project-title {
@@ -374,6 +374,10 @@
     width: 100%;
 }
 
+.desk-icons {
+    display: none;
+}
+
 @media only screen and (min-width: 768px) {
     .home-container {
         margin: 0;
@@ -397,10 +401,21 @@
         font-size: 50px;
     }
 
+    .button-arr {
+        position: relative;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .button-arr a {
+        height: 100%;
+    }
+
     .real-button {
         font-size: 30px;
         padding: 0;
         font-weight: 400;
+        height: 100%;
     }
 
     .project-title h1 {
@@ -441,6 +456,10 @@
         position: relative;
     }
 
+    .home-1-text h1 {
+        font-size: 60px;
+    }
+
     .home-1-art {
         width: 45%;
         aspect-ratio: 1;
@@ -474,19 +493,23 @@
     }
 
     .img-0 {
-        width: 30%;
+        width: auto;
+        max-height: 90%;
     }
     
     .img-1 {
-        width: 60%;
+        width: auto;
+        max-height: 90%;
     }
     
     .img-2 {
-        width: 70%;
+        width: auto;
+        max-height: 90%;
     }
     
     .img-3 {
-        width: 30%;
+        width: auto;
+        max-height: 90%;
     }
     
     .project-0:hover .img-0, .project-1:hover .img-1, .project-2:hover .img-2, .project-3:hover .img-3 {
@@ -525,6 +548,7 @@
     .skills-container {
         flex-wrap: nowrap;
         overflow-x: scroll;
+        overflow-y: hidden;
         justify-content: flex-start;
         aspect-ratio: auto;
         gap: 20px;
@@ -550,13 +574,19 @@
         transition: 1s ease;
     }
 
-    .skills-container::-webkit-scrollbar-thumb:hover {
-
-    }
-
     .skills {
         height: 100%;
         width: auto;
+        transition: 0.5s ease;
+    }
+
+    .skills p {
+        pointer-events: none;
+    }
+
+    .skills:hover {
+        background-color: rgb(241, 241, 241);
+        padding: 5px;
     }
 
     .home-3 {
@@ -565,9 +595,13 @@
         width: 100%;
     }
 
+    .home-4 {
+        gap: 10px;
+    }
+
     .home-4 h1 {
         width: 30%;
-        font-size: 40px;
+        font-size: 60px;
     }
 
     .input-form {
@@ -576,5 +610,30 @@
 
     .input-divs p, .input-divs input, .input-form button, .input-divs textarea {
         font-size: 26px;
+    }
+
+    .desk-icons {
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        gap: 5%;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .home-1, .home-2-title, .home-3-title, .skills-container {
+        width: 60%;
+    }
+
+    .home-2-title {
+        width: 60%;
+    }
+
+    .project-0, .project-3 {
+        width: 60%;
+        margin: 0 5%;
+    }
+    .project-1, .project-2 {
+        width: 29.5%;
     }
 }
