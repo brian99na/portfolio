@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.9fb91859.chunk.css",
-    "main.js": "/portfolio/static/js/main.6e56f828.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.6e56f828.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.038d37ce.chunk.css",
+    "main.js": "/portfolio/static/js/main.a6de6d17.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.a6de6d17.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.57f4d48f.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.57f4d48f.js.map",
     "static/js/2.4d9e855c.chunk.js": "/portfolio/static/js/2.4d9e855c.chunk.js",
     "static/js/2.4d9e855c.chunk.js.map": "/portfolio/static/js/2.4d9e855c.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.9fb91859.chunk.css.map": "/portfolio/static/css/main.9fb91859.chunk.css.map",
+    "static/css/main.038d37ce.chunk.css.map": "/portfolio/static/css/main.038d37ce.chunk.css.map",
     "static/js/2.4d9e855c.chunk.js.LICENSE.txt": "/portfolio/static/js/2.4d9e855c.chunk.js.LICENSE.txt",
     "static/media/Copy of Brian Na Resume.623c5eb0.jpg": "/portfolio/static/media/Copy of Brian Na Resume.623c5eb0.jpg",
     "static/media/android-chrome-512x512-removebg-preview.4527a40b.png": "/portfolio/static/media/android-chrome-512x512-removebg-preview.4527a40b.png",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.57f4d48f.js",
     "static/js/2.4d9e855c.chunk.js",
-    "static/css/main.9fb91859.chunk.css",
-    "static/js/main.6e56f828.chunk.js"
+    "static/css/main.038d37ce.chunk.css",
+    "static/js/main.a6de6d17.chunk.js"
   ]
 }
