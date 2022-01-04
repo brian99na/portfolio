@@ -279,7 +279,7 @@ h1 {
     }
 
     .nav-links, .projects-drop-arrow:hover {
-        animation: arrowPop 1s cubic-bezier(0,.76,.14,.99);
+        animation: arrowPopHeader 1s cubic-bezier(0,.76,.14,.99);
     }
 
     .nav-links {
@@ -407,12 +407,12 @@ h1 {
     }
 }
 
-@keyframes arrowPop {
+@keyframes arrowPopHeader {
     100%, 0% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-1px);
+        transform: translateY(-5px);
     }
 }

@@ -65,9 +65,7 @@ function Home(props) {
     }
 
     const handleFormSubmit = (e) => {
-        setTimeout(() => {
-            alert("I've received your message, thank you!")
-        }, 500);
+        alert("I've received your message, thank you!")
     }
 
     useEffect(() => {
@@ -112,7 +110,18 @@ function Home(props) {
                     </div>
                 </div>
                 <div className={`home-1-art ${arrowClick ? 'art-click' : ''}`}>
-
+                    <div className='head'>
+                        <div className='hat-main'>
+                            <div className='hat-top'></div>
+                            <div className='hat-bot'></div>
+                        </div>
+                        <div className='eye1'>
+                            <div className='pupil'></div>
+                        </div>
+                        <div className='eye2'>
+                            <div className='pupil'></div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className='home-2' >
