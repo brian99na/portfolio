@@ -15,7 +15,7 @@ import homepageArt from '../../images/goodmorning_00000.png'
 function Home(props) {
     const [arrowClick, setArrowClick] = useState(false)
     const navigate = useNavigate()
-
+    const [email, setEmail] = useState(false)
     const projectsRef = useRef()
     const skillsRef = useRef()
     const contactRef = useRef()
@@ -63,6 +63,13 @@ function Home(props) {
         contactRef.current.scrollIntoView({
             behavior: 'smooth'
         })
+    }
+
+    const handleFormSubmit = (e) => {
+        setEmail(true)
+        setTimeout(() => {
+            alert("I've received your message, thank you!")
+        }, 500);
     }
 
     useEffect(() => {
@@ -124,21 +131,24 @@ function Home(props) {
                 </div>
             </section>
             <section className='home-4' ref={contactRef}>
+                {email && <h1>I've received your email, thanks!</h1>}
                 <h1>Get in touch</h1>
-                <form className='input-form'>
+                <form className='input-form' action="https://formsubmit.co/brian99na@gmail.com" method='POST' onSubmit={handleFormSubmit}>
                     <div className='input-divs'>
-                        <p>Name *</p>
-                        <input placeholder='Your Name'></input>
+                        <p>Subject</p>
+                        <input placeholder='Subject'></input>
                     </div>
                     <div className='input-divs'>
                         <p>Email *</p>
-                        <input placeholder='Your Email'></input>
+                        <input type="email" name="email" placeholder='Your Email' required></input>
                     </div>
                     <div className='input-divs message'>
                         <p>Message *</p>
-                        <textarea placeholder='Your Message'></textarea>
+                        <textarea name='message' placeholder='Your Message' required></textarea>
                     </div>
-                    <button>Send</button>
+                    <input type='hidden' name='_captcha' value='false'/>
+                    <input type="hidden" name="_next" value="https://brian99na.github.io/portfolio/"></input>
+                    <button type='submit'>Send</button>
                 </form>
                 <div className='desk-icons'>
                     <a href='https://www.github.com/brian99na' target='_blank'rel='noreferrer' ><AiFillGithub className='icons'/></a>
