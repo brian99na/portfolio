@@ -35,8 +35,8 @@ function App() {
         title1: 'Create',
         title2: 'A social media website for artists and creators',
         title3: 'React, SASS, HTML, JavaScript, Django, Python',
-        link1: 'https://brian99na.github.io/Create/',
-        link2: 'https://github.com/brian99na/Create',
+        link1: 'https://brian99na.github.io/create/',
+        link2: 'https://github.com/brian99na/create',
         secTitle1: 'My thought process.',
         secPara: `My background is in all types of media creation and I wanted a place to store snippets 
         of work that I could easily show others. I found that a standard portfolio was too restricting
