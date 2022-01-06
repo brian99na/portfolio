@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './resume.css'
 import { DiGoogleDrive } from 'react-icons/di'
 import { GrDocumentPdf } from 'react-icons/gr'
-import resume from '../../images/Copy of Brian Na Resume.jpg'
+import resume from '../../images/0001.jpg'
 
 function Resume(props) {
 
