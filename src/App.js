@@ -5,7 +5,7 @@ import Resume from './components/Resume/Resume'
 import About from './components/About/About'
 import ProjectTemplate from './components/Projects/ProjectTemplate';
 import { Routes, Route } from 'react-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import btcAnim from './images/coinflip_img.png'
 import whatif1 from './images/whatifArt1_00000.png'
 import whatif2 from './images/whatifArt2.png'
@@ -158,6 +158,10 @@ function App() {
         thirdImage1={project.thirdImage1} thirdImage2={project.thirdImage2} category={project.category} position={project.position} year={project.year}/>}/>
     )
   })
+
+  useEffect(() => {
+    document.title = "Hey, it's Brian"
+  }, [])
 
   return (
     <div className="App">
