@@ -876,7 +876,7 @@
 
 .experience-dropdown-open {
     height: 540px;
-    opacity: 100%;
+    opacity: 1;
     margin: 0 0 20px 0;
     padding: 0 0 10px 0;
 }
