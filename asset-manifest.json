@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.6dd12b52.chunk.css",
+    "main.css": "/portfolio/static/css/main.c2144278.chunk.css",
     "main.js": "/portfolio/static/js/main.5b5b54cd.chunk.js",
     "main.js.map": "/portfolio/static/js/main.5b5b54cd.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.0c158ce8.js",
@@ -8,7 +8,7 @@
     "static/js/2.c9128408.chunk.js": "/portfolio/static/js/2.c9128408.chunk.js",
     "static/js/2.c9128408.chunk.js.map": "/portfolio/static/js/2.c9128408.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.6dd12b52.chunk.css.map": "/portfolio/static/css/main.6dd12b52.chunk.css.map",
+    "static/css/main.c2144278.chunk.css.map": "/portfolio/static/css/main.c2144278.chunk.css.map",
     "static/js/2.c9128408.chunk.js.LICENSE.txt": "/portfolio/static/js/2.c9128408.chunk.js.LICENSE.txt",
     "static/media/2024 Resume.cf21b9a3.jpg": "/portfolio/static/media/2024 Resume.cf21b9a3.jpg",
     "static/media/android-chrome-512x512-removebg-preview.4527a40b.png": "/portfolio/static/media/android-chrome-512x512-removebg-preview.4527a40b.png",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.0c158ce8.js",
     "static/js/2.c9128408.chunk.js",
-    "static/css/main.6dd12b52.chunk.css",
+    "static/css/main.c2144278.chunk.css",
     "static/js/main.5b5b54cd.chunk.js"
   ]
 }
