@@ -26,10 +26,10 @@ function Resume(props) {
                 <div className='section-1-text'>
                     <h1>Resume</h1>
                     <p>Scroll to view or Download Below</p>
-                    <button className='desk-button' name='https://drive.google.com/file/d/15wgRA0MTBFVkoDKhaW4AcCloGVTlsAWU/view?usp=sharing' onClick={handleDelayClick}><DiGoogleDrive className='desk-resume-icon2'/>Link to Download</button>
+                    <button className='desk-button' name='https://drive.google.com/file/d/1XQDBzVJUbCk1VEtuXSF-5vzd9QepT0yL/view?usp=sharing' onClick={handleDelayClick}><DiGoogleDrive className='desk-resume-icon2'/>Link to Download</button>
                 </div>
                 <GrDocumentPdf className='resume-icon1'/>
-                <button className='mob-button' name='https://drive.google.com/file/d/15wgRA0MTBFVkoDKhaW4AcCloGVTlsAWU/view?usp=sharing' onClick={handleDelayClick}><DiGoogleDrive className='resume-icon2'/>Link to Download</button>
+                <button className='mob-button' name='https://drive.google.com/file/d/1XQDBzVJUbCk1VEtuXSF-5vzd9QepT0yL/view?usp=sharing' onClick={handleDelayClick}><DiGoogleDrive className='resume-icon2'/>Link to Download</button>
             </section>
             <section className='section-2'>
                 <img className='reg-resume' src={resume} alt='resume'/>
